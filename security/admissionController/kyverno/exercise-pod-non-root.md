@@ -4,7 +4,7 @@
 - Kubernetes cluster with admission controller support
 - kubectl configured with cluster admin privileges
 - Helm 3 installed
-- 
+
 ## Exercise Steps
 
 ### Step 1: Create Project Directory Structure
