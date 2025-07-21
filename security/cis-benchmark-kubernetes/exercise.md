@@ -14,9 +14,9 @@ kubectl logs kube-bench-j76s9
 # Ausgabe
 [INFO] 1 Master Node Security Configuration
 [INFO] 1.1 API Server
-...
+```
 
 ## Reference:
 
   * https://hub.docker.com/r/aquasec/kube-bench
-  * 
+
