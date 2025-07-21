@@ -62,6 +62,12 @@ spec:
       - resources:
           kinds:
           - Pod
+    exclude:
+        resources:
+          namespaces:
+            - kube-system
+            - monitoring
+
     validate:
       message: "Pod must run as non-root user (runAsUser > 0 and runAsNonRoot: true)"
       pattern:
@@ -94,6 +100,7 @@ nano test-root-pod.yaml
 ```
 
 ```
+# Variante: nichts ist gesetzt 
 apiVersion: v1
 kind: Pod
 metadata:
@@ -114,6 +121,33 @@ spec:
 Try to apply it (should fail):
 
 ```bash
+kubectl apply -f .
+```
+
+```bash
+nano test-root-pod-v2.yaml
+```
+
+```
+# Variante: nichts ist gesetzt 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-root-pod-v2
+  namespace: default
+spec:
+  securityContext:
+    runAsUser: 0
+    runAsNonRoot: false
+  containers:
+  - name: nginx
+    image: nginx:1.27.0
+    securityContext:
+      runAsUser: 0
+      runAsNonRoot: false
+```
+
+```bash 
 kubectl apply -f .
 ```
 
