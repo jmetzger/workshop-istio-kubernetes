@@ -20,7 +20,10 @@ cd manifests/kyverno-non-root-pod
 Create a values file for high availability configuration:
 
 ```bash
-cat > manifests/values.yaml << 'EOF'
+nano manifests/values.yaml
+```
+
+```
 admissionController:
   replicas: 3
 backgroundController:
@@ -29,7 +32,6 @@ cleanupController:
   replicas: 3
 reportsController:
   replicas: 3
-EOF
 ```
 
 ```bash
