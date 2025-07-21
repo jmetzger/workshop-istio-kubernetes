@@ -25,6 +25,11 @@ kubectl logs job/kube-bench
 [INFO] 1.1 API Server
 ```
 
+## Beispiel für Fehlerbehebung auf Node 
+
+### FAIL: 
+
+
 ## Reference:
 
   * https://hub.docker.com/r/aquasec/kube-bench
