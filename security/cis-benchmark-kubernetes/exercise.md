@@ -14,7 +14,9 @@ wget https://raw.githubusercontent.com/aquasecurity/kube-bench/main/job.yaml
 kubectl apply -f job.yaml
 kubectl get pods
 # Durch Euren Pod ersetzen
-kubectl logs kube-bench-j76s9
+# kubectl logs kube-bench-j76s9
+# Oder: einfacher -> zeigt logs des 1. Pods des jobs
+kubectl logs job/kube-bench
 ```
 
 ```
