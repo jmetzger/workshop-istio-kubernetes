@@ -1,22 +1,18 @@
-# Exercise: Pod Non-Root User Enforcement with Kyverno
-
-## Objective
-Configure Kyverno admission controller to enforce that pods run as non-root users for enhanced security.
+# Übung: Pod Non-Root User Enforcement with Kyverno
 
 ## Prerequisites
 - Kubernetes cluster with admission controller support
 - kubectl configured with cluster admin privileges
 - Helm 3 installed
-- Basic understanding of SecurityContext and admission controllers
 
 ## Exercise Steps
 
 ### Step 1: Create Project Directory Structure
 
 ```bash
-cd ~
-mkdir -p kyverno-non-root-pod/manifests
-cd kyverno-non-root-pod
+cd
+mkdir -p manifests/kyverno-non-root-pod
+cd manifests/kyverno-non-root-pod
 ```
 
 ### Step 2: Install Kyverno using Helm
@@ -42,7 +38,10 @@ kubectl get pods -n kyverno
 Create the policy file:
 
 ```bash
-cat > manifests/non-root-policy.yaml << 'EOF'
+nano manifests/non-root-policy.yaml
+```
+
+```
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
 metadata:
@@ -64,6 +63,12 @@ spec:
       - resources:
           kinds:
           - Pod
+    exclude:
+        resources:
+          namespaces:
+            - kube-system
+            - monitoring
+
     validate:
       message: "Pod must run as non-root user (runAsUser > 0 and runAsNonRoot: true)"
       pattern:
@@ -75,7 +80,6 @@ spec:
           - securityContext:
               runAsNonRoot: true
               runAsUser: ">0"
-EOF
 ```
 
 ### Step 4: Apply the Policy
@@ -93,7 +97,11 @@ kubectl describe clusterpolicy require-non-root-user
 Create a test pod that should be rejected:
 
 ```bash
-cat > manifests/test-root-pod.yaml << 'EOF'
+nano test-root-pod.yaml
+```
+
+```
+# Variante: nichts ist gesetzt 
 apiVersion: v1
 kind: Pod
 metadata:
@@ -109,13 +117,39 @@ spec:
     securityContext:
       runAsUser: 0
       runAsNonRoot: false
-EOF
 ```
 
 Try to apply it (should fail):
 
 ```bash
-kubectl apply -f manifests/test-root-pod.yaml
+kubectl apply -f .
+```
+
+```bash
+nano test-root-pod-v2.yaml
+```
+
+```
+# Variante: nichts ist gesetzt 
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-root-pod-v2
+  namespace: default
+spec:
+  securityContext:
+    runAsUser: 0
+    runAsNonRoot: false
+  containers:
+  - name: nginx
+    image: nginx:1.27.0
+    securityContext:
+      runAsUser: 0
+      runAsNonRoot: false
+```
+
+```bash 
+kubectl apply -f .
 ```
 
 ### Step 6: Test with Non-Root Pod (Should Succeed)
@@ -123,7 +157,10 @@ kubectl apply -f manifests/test-root-pod.yaml
 Create a pod that complies with the policy:
 
 ```bash
-cat > manifests/test-non-root-pod.yaml << 'EOF'
+nano test-non-root-pod.yaml
+```
+
+```
 apiVersion: v1
 kind: Pod
 metadata:
@@ -143,14 +180,13 @@ spec:
       runAsNonRoot: true
       allowPrivilegeEscalation: false
       readOnlyRootFilesystem: false
-EOF
 ```
 
-Apply the compliant pod:
-
 ```bash
-kubectl apply -f manifests/test-non-root-pod.yaml
+kubectl apply -f test-non-root-pod.yaml
+```
 
+```
 # Verify the pod is running
 kubectl get pod test-non-root-pod
 kubectl exec test-non-root-pod -- id
@@ -166,11 +202,7 @@ kubectl get events --field-selector reason=PolicyViolation
 kubectl logs -n kyverno -l app.kubernetes.io/name=kyverno
 
 # Cleanup test pods
-kubectl delete -f manifests/ --ignore-not-found=true
-
-# Optional: Uninstall Kyverno
-# helm uninstall kyverno -n kyverno
-# kubectl delete namespace kyverno
+kubectl delete -f . 
 ```
 
 ## Expected Results
