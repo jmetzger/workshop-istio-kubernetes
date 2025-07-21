@@ -17,10 +17,11 @@ cd manifests/kyverno-non-root-pod
 
 ### Step 2: Create Values File and Install Kyverno using Helm
 
-Create a values file for high availability configuration:
+Create a helm directory and values file for high availability configuration:
 
 ```bash
-nano manifests/values.yaml
+mkdir helm
+nano helm/values.yaml
 ```
 
 ```
@@ -44,7 +45,7 @@ helm upgrade --install kyverno kyverno/kyverno \
   --namespace kyverno \
   --create-namespace \
   --version 3.4.4 \
-  --values manifests/values.yaml \
+  --values helm/values.yaml \
   --wait
 
 # Verify installation (should show 3 replicas for each controller)
@@ -57,7 +58,7 @@ kubectl get deployment -n kyverno
 Create the policy file:
 
 ```bash
-nano manifests/non-root-policy.yaml
+nano non-root-policy.yaml
 ```
 
 ```
@@ -104,7 +105,7 @@ spec:
 ### Step 4: Apply the Policy
 
 ```bash
-kubectl apply -f manifests/non-root-policy.yaml
+kubectl apply -f non-root-policy.yaml
 
 # Verify policy is created
 kubectl get clusterpolicy
