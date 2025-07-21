@@ -62,6 +62,10 @@ Create the policy file:
 nano non-root-policy.yaml
 ```
 
+Erklärung der Policy-Validierung:
+  1. `=(securityContext)` - Das `=` bedeutet "muss existieren"
+  2. `runAsNonRoot: true` - Muss auf `true` gesetzt sein
+
 ```
 apiVersion: kyverno.io/v1
 kind: ClusterPolicy
