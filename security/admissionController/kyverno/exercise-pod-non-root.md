@@ -138,15 +138,9 @@ metadata:
   name: test-root-pod
   namespace: default
 spec:
-  securityContext:
-    runAsUser: 0
-    runAsNonRoot: false
   containers:
   - name: nginx
     image: nginx:1.27.0
-    securityContext:
-      runAsUser: 0
-      runAsNonRoot: false
 ```
 
 Try to apply it (should fail):
