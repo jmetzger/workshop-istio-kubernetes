@@ -30,9 +30,6 @@ nano 01-pod.yaml
 apiVersion: v1
 kind: Pod
 metadata:
-  creationTimestamp: null
-  labels:
-    run: pod
   name: nginxrun
 spec:
   securityContext:
