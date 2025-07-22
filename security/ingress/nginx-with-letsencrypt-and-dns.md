@@ -130,6 +130,10 @@ kubectl apply -f .
 ## Step 6: check if certificate was created 
 
 ```
+# certificate request was created - is it ready ? 
+kubectl get certificaterequest
+
+
 kubectl get certificates
 kubectl describe certificates le-cert 
 kubectl get secret tls-secret -o yaml 
