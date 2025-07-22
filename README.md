@@ -18,7 +18,7 @@
      * [Kill Chain](kill-chain.md)
 
   1. Benchmarking / Security Scans
-     * [CIS Benchmarking Kubernetes]()
+     * [CIS Benchmarking Kubernetes](https://www.cisecurity.org/benchmark/kubernetes)
      * [Exercise: kube-bench - scanning with cis-benchmark-kubernetes](security/cis-benchmark-kubernetes/exercise.md)
 
   1. Encrypting Node-2-Node traffic (wireguard with calico)
