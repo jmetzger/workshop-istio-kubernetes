@@ -1,6 +1,6 @@
 # Securing kubelet 
 
-## Breach 1: bypass adminission controller 
+## Breach 1: bypass admission controller 
 
 ```
 If a static Pod fails admission control, the kubelet won't register the
