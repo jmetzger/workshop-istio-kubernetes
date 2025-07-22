@@ -111,6 +111,8 @@ kubectl exec -it nocap-alpine -- sh
 ```
 
 ```
+apk add libcap
+capsh --print 
 ping www.google.de
 wget -O - http://www.google.de
 ```
