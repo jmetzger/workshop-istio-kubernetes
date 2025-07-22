@@ -50,6 +50,7 @@
      * [Disable ServiceLinksEnable false](https://github.com/jmetzger/training-kubernetes-security-en/blob/main/security/by.layer/pods-container/enableServiceLinks/disable-howto-and-why.md
 ) 
      * [Great but still alpha User Namespaces]()
+     * [Use kubectl in containe inClusterConfig](security/kubectl-within-container.md)
     
   1. Reaction 
      * [The Audit Logs](/security/reaction/auditlog.md)
