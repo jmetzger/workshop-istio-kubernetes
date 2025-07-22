@@ -18,7 +18,10 @@ wget https://raw.githubusercontent.com/aquasecurity/kube-bench/main/job.yaml
 spec:
   template:
     spec:
-      nodeName: k8s-w1 
+      nodeName: k8s-w1
+      containers:
+        - command: ["kube-bench"]
+ 
 ```
 
 ```
