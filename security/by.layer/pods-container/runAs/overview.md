@@ -50,7 +50,7 @@ kubectl describe pod nginxrun
 kubectl logs nginxrun 
 ```
 
-## Lösung 1.1 Alternative image verwenden 
+## Lösung 1.1 Alternatives image verwenden 
 
 ```
 kubectl delete -f 01-pod.yaml
