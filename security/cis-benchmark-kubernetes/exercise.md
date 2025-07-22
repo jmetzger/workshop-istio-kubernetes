@@ -97,7 +97,8 @@ exit
 ```
 kubectl delete -f job.yaml
 kubectl apply -f job.yaml
-kubectl logs job/kube-bench > report-afterfix.txt 
+kubectl logs job/kube-bench > report-afterfix.txt
+diff report.txt report-afterfix.txt
 ```
 
 ```
