@@ -40,8 +40,6 @@ spec:
   containers:
   - image: nginx:1.23
     name: pod
-    resources: {}
-  dnsPolicy: ClusterFirst
   restartPolicy: Always
 ```
 
