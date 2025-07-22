@@ -25,6 +25,10 @@ kubectl logs job/kube-bench
 [INFO] 1.1 API Server
 ```
 
+```
+kubectl logs job/kube-bench > report.txt
+```
+
 ## Beispiel für Fehlerbehebung auf Node 
 
 ### FAIL: 
