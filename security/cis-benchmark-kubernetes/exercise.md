@@ -88,6 +88,7 @@ systemctl status kubelet
 ```
 ```
 exit
+exit
 ```
 
 
