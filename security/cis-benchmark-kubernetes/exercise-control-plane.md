@@ -141,7 +141,7 @@ diff report.txt report-afterfix.txt
 ## Make it non-scheduable again 
 
 ```
-kubectl taint nodes k8s-cp  node-role.kubernetes.io/control-plane:NoSchedule-
+kubectl taint nodes k8s-cp  node-role.kubernetes.io/control-plane:NoSchedule
 ```
 
 
