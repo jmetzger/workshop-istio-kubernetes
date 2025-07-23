@@ -102,6 +102,21 @@ sudo su -
 ```
 
 ```
+cd /etc/kubernetes/manifests/
+nano kube-apiserver.yaml
+```
+
+```
+# changes from cis-scan 
+- --profiling=false  # ergänzen
+```
+
+<img width="764" height="146" alt="image" src="https://github.com/user-attachments/assets/af1d9561-eba2-4e54-bfea-133475d4ed27" />
+
+
+
+
+```
 exit
 exit
 ```
