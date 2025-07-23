@@ -34,9 +34,6 @@
 ```bash
 # Allow Calico BGP peering
 iptables -A INPUT -p tcp --dport 179 -s 10.0.0.0/24 -j ACCEPT
-
-# (If IPIP is enabled)
-iptables -A INPUT -p 4 -s 10.0.0.0/24 -j ACCEPT
 ```
 ---
 
