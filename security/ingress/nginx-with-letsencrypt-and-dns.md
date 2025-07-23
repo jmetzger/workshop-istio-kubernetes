@@ -19,14 +19,14 @@ helm upgrade --install cert-manager --namespace cert-manager --create-namespace 
 https://cloud.digitalocean.com/account/api/tokens/new
 ```
 
-<img width="847" height="242" alt="image" src="https://github.com/user-attachments/assets/6946bf0f-8117-4a70-b10f-fcf9d4a623b4" />
-
-
 ```
-# we save the token under /tmp/do_dns_token 
+# BUT: Trainer already saved the token under /tmp/do_dns_token 
 # now you need to encode it
 cat /tmp/do_dns_token | base64
 ```
+
+<img width="847" height="242" alt="image" src="https://github.com/user-attachments/assets/6946bf0f-8117-4a70-b10f-fcf9d4a623b4" />
+
 
 ## Step 2.5: Subdomains einrichten in digitalocean - dns 
 
