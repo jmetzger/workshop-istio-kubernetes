@@ -67,49 +67,40 @@ kubectl logs job/kube-bench
 kubectl logs job/kube-bench > report.txt
 ```
 
-## Beispiel für Fehlerbehebung auf Node 
+## Beispiel für Fehlerbehebung auf Node (anonymous auth)
+
+### Erklärung 
+
+<img width="926" height="235" alt="image" src="https://github.com/user-attachments/assets/c14a7154-79e7-405b-8a79-41af38d8b047" />
 
 ### FAIL: 
 
 ```
-[FAIL] 4.1.1 Ensure that the kubelet service file permissions are set to 600 or more restrictive (Automated)
+[FAIL] 1.2.15 Ensure that the --profiling argument is set to false (Automated)
 ```
 
 ```
 # Remediations
-4.1.1 Run the below command (based on the file location on your system) on the each worker node.
-For example, chmod 600 /lib/systemd/system/kubelet.service
+1.2.15 Edit the API server pod specification file /etc/kubernetes/manifests/kube-apiserver.yaml
+on the control plane node and set the below parameter.
+--profiling=false
 ```
 
 ### Fix: Walkthrough 
 
 ```
 # ip - adresse ausfindig machen 
-kubectl get nodes -o wide | grep k8s-w1
+kubectl get nodes -o wide | grep k8s-cp
 ```
 
 ```
-ssh 11trainingdo@<ip-des-w1-worker-nodes>
+ssh 11trainingdo@<ip-des-control-plane-nodes>
 ```
 
 ```
 sudo su -
 ```
 
-```
-find /lib -name "kubelet.service"
-find /usr/lib -name "kubelet.service"
-```
-
-```
-chmod -R 600 /usr/lib/systemd/system/kubelet.service*
-
-# Zur Überprüfung ob Rechteänderung auch für kubelet.service.d/kubeadm.conf
-# gut ist -> weil wieder hochfährt 
-systemctl restart kubelet
-# ist er neu gestartet ?
-systemctl status kubelet 
-```
 ```
 exit
 exit
@@ -130,6 +121,7 @@ diff report.txt report-afterfix.txt
 ```
 
 ## Make it non-scheduable again 
+
 
 
 ## Reference:
