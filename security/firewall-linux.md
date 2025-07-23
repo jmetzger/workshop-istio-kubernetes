@@ -16,7 +16,7 @@
 | ------------- | -------- | ------------ | -------------------- | ---------------------------- |
 | All nodes     | TCP      | 179          | other nodes          | Calico BGP peering           |
 | Control plane | TCP      | 6443         | workers + admin      | Kubernetes API               |
-| Control plane | TCP      | 2379-2380    | itself or HA members | etcd                         |
+| Control plane | TCP      | 2379-2380    | itself or HA members (control planes) | etcd                         |
 | Control plane | TCP      | 10250        | workers              | Kubelet on CP                |
 | Control plane | TCP      | 10257        | localhost            | kube-controller-manager      |
 | Control plane | TCP      | 10259        | localhost            | kube-scheduler               |
