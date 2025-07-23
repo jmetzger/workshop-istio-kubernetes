@@ -105,7 +105,7 @@ metadata:
   name: global-default-deny
 spec:
   order: 1000  # Hohe Order = wird zuletzt bei Global Policies evaluiert
-  namespaceSelector: kubernetes.io/metadata.name == "order-test"
+  namespaceSelector: kubernetes.io/metadata.name != "kube-system" && kubernetes.io/metadata.name != "calico-system"
   selector: all()
   types:
   - Ingress
@@ -113,6 +113,20 @@ spec:
   ingress:
   - action: Deny
   egress:
+  # allow all namespaces to communicate to DNS pods
+  - action: Allow
+    protocol: UDP
+    destination:
+      selector: 'k8s-app == "kube-dns"'
+      ports:
+      - 53
+  - action: Allow
+    protocol: TCP
+    destination:
+      selector: 'k8s-app == "kube-dns"'
+      ports:
+      - 53
+  # Deny everything else
   - action: Deny
 ```
 
@@ -142,7 +156,7 @@ metadata:
   name: global-allow-frontend-egress
 spec:
   order: 500  # Mittlere Order = wird vor Global Default Deny evaluiert
-  namespaceSelector: kubernetes.io/metadata.name == "order-test"
+  namespaceSelector: kubernetes.io/metadata.name != "kube-system" && kubernetes.io/metadata.name != "calico-system"
   selector: role == 'frontend'
   types:
   - Egress
@@ -170,7 +184,7 @@ metadata:
   name: global-allow-backend-ingress
 spec:
   order: 500  # Mittlere Order = wird vor Global Default Deny evaluiert
-  namespaceSelector: kubernetes.io/metadata.name == "order-test"
+  namespaceSelector: kubernetes.io/metadata.name != "kube-system" && kubernetes.io/metadata.name != "calico-system"
   selector: role == 'backend'
   types:
   - Ingress
@@ -210,7 +224,7 @@ metadata:
   name: global-emergency-deny
 spec:
   order: 100  # Niedrigste Order = wird zuerst bei Global Policies evaluiert
-  namespaceSelector: kubernetes.io/metadata.name == "order-test"
+  namespaceSelector: kubernetes.io/metadata.name != "kube-system" && kubernetes.io/metadata.name != "calico-system"
   selector: role == 'frontend'
   types:
   - Egress
@@ -265,7 +279,7 @@ metadata:
   name: global-super-emergency-allow
 spec:
   order: 50  # Niedrigste Order = allererste Evaluation bei Global Policies
-  namespaceSelector: kubernetes.io/metadata.name == "order-test"
+  namespaceSelector: kubernetes.io/metadata.name != "kube-system" && kubernetes.io/metadata.name != "calico-system"
   selector: role == 'frontend'
   types:
   - Egress
