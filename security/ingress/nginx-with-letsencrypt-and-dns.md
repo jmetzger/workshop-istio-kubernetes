@@ -271,3 +271,32 @@ kubectl run podtest --rm -it --image busybox
 ```
 nano ingress.yml
 ```
+
+```
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: example-ingress
+  annotations:
+    ingress.kubernetes.io/rewrite-target: /
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: "app12.lab1.t3isp.de"
+    http:
+      paths:
+        - path: /apple
+          pathType: Prefix
+          backend:
+            service:
+              name: apple-service
+              port:
+                number: 80
+        - path: /banana
+          pathType: Prefix
+          backend:
+            service:
+              name: banana-service
+              port:
+                number: 80
+```
