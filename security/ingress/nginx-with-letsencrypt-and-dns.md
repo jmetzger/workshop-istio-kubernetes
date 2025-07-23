@@ -281,8 +281,12 @@ metadata:
     ingress.kubernetes.io/rewrite-target: /
 spec:
   ingressClassName: nginx
+  tls:
+    - hosts:
+        - app.tln<nr>.do.t3isp.de
+      secretName: tls-cert
   rules:
-  - host: "app12.lab1.t3isp.de"
+  - host: "app.tln<nr>.do.t3isp.de"
     http:
       paths:
         - path: /apple
