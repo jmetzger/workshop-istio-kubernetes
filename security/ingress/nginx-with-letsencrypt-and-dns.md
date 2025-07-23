@@ -276,7 +276,7 @@ nano ingress.yml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: example-ingress
+  name: ingress-app
   annotations:
     ingress.kubernetes.io/rewrite-target: /
 spec:
