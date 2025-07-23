@@ -8,7 +8,7 @@ kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/
 helm repo add jetstack https://charts.jetstack.io
 
 ## Install the cert-manager helm chart
-helm install cert-manager --namespace cert-manager --create-namespace --version v1.14.5 jetstack/cert-manager
+helm upgrade --install cert-manager --namespace cert-manager --create-namespace --version v1.14.5 jetstack/cert-manager
 
 ```
 
