@@ -6,7 +6,7 @@
 # if you have a job kube-bench from the last exercise -> delete it
 kubectl get jobs | grep kube-bench
 # Only if it was there 
-kubecl delete jobs kube-bench 
+kubectl delete jobs kube-bench 
 ```
 
 ## Walkthrough
