@@ -140,3 +140,134 @@ kubectl describe certificates le-crt
 kubectl get secret tls-secret -o yaml 
 ```
 
+## Step 7: Integrate Ingress now 
+
+## Step 7.1: Walkthrough 
+
+```
+cd 
+cd manifests
+mkdir abi 
+cd abi
+```
+
+```
+nano apple-deploy.yml 
+```
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: apple-app
+  labels:
+    app: apple
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: apple
+  template:
+    metadata:
+      labels:
+        app: apple
+    spec:
+      containers:
+        - name: apple-app
+          image: hashicorp/http-echo
+          args:
+            - "-text=apple-<euer-name>"
+```
+
+```
+nano apple-svc.yaml
+```
+
+
+```
+kind: Service
+apiVersion: v1
+metadata:
+  name: apple-service
+spec:
+  type: ClusterIP
+  selector:
+    app: apple
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 5678 # Default port for image
+```
+
+```
+kubectl apply -f .
+```
+
+```
+nano banana-deploy.yml
+```
+
+```
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: banana-app
+  labels:
+    app: banana
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: banana
+  template:
+    metadata:
+      labels:
+        app: banana
+    spec:
+      containers:
+        - name: apple-app
+          image: hashicorp/http-echo
+          args:
+            - "-text=banana-<euer-name>"
+```
+
+```
+nano banana-svc.yaml
+```
+
+```
+kind: Service
+apiVersion: v1
+metadata:
+  name: banana-service
+spec:
+  type: ClusterIP
+  selector:
+    app: banana
+  ports:
+    - port: 80
+      targetPort: 5678 # Default port for image
+```
+
+```
+kubectl apply -f .
+```
+
+## Step 7.2: Testing connection by podIP and Service 
+
+```
+kubectl get svc
+kubectl get pods -o wide
+kubectl run podtest --rm -it --image busybox
+```
+
+```
+/ # wget -O - http://<pod-ip>:5678 
+/ # wget -O - http://<cluster-ip>
+```
+
+## Step 7.3: Walkthrough 
+
+```
+nano ingress.yml
+```
