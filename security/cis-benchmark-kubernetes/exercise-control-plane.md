@@ -135,7 +135,7 @@ diff report.txt report-afterfix.txt
 ```
 
 ```
-[PASS] 4.1.1 Ensure that the kubelet service file permissions are set to 600 or more restrictive (Automated)
+[PASS] 1.2.15 Ensure that the --profiling argument is set to false (Automated)
 ```
 
 ## Make it non-scheduable again 
