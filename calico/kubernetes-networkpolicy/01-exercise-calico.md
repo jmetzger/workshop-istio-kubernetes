@@ -229,7 +229,7 @@ wget -O - http://svc-nginx.fremd
 wget -O - http://www.google.de
 ```
 
-## Step 5 (Optional): Traffic vom Ingress Controller erlauben
+## Step 7 (Optional): Traffic vom Ingress Controller erlauben
 
 ```
 nano ingress-network-policy.yaml
