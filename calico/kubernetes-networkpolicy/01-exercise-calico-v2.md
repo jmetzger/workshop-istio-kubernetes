@@ -225,7 +225,9 @@ kubectl run -it --rm access --image=busybox
 # In der Busybox das geht ->
 wget -O - http://svc-nginx
 # das nicht
-wget -O - http://svc-nginx.fremd  
+wget -O - http://svc-nginx.fremd
+# das geht
+wget -O - http://www.google.de
 ```
 
 ## Step 5 (Optional): Traffic vom Ingress Controller erlauben
