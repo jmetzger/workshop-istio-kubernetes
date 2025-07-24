@@ -56,6 +56,13 @@ kubectl apply -f .
 ## Step 2: nginx ausrollen aus manifests/04-service und testen
 
 ```
+# pod in anderem namespace starten
+kubectl create ns somewhere
+kubectl run -n somewhere nginx-other-namespace --image=nginx
+# Get ip and note down -> e.g. 192.168.46.20
+kubectl -n somewhere get pods -o wide 
+
+```
 cd
 mkdir -p manifests
 cd manifests
@@ -119,12 +126,21 @@ kubectl apply -f .
 kubectl run -it --rm access --image=busybox 
 ```
 ```
-
-# In der Bbusybox 
+# In der Busybox 
+# bekomme die Ausgabe des Ziels nicht 
 wget -O - http://svc-nginx 
+# Google geht auch nicht
+wget -O - http://www.google.de
+# aber dns lookup geht
+nslookup www.google.de
 ```
 
+
 ## Step 3: Traffic erlauben egress von busybox 
+
+
+
+
 
 ```
 cd
