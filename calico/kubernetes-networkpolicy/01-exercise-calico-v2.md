@@ -1,15 +1,5 @@
 # Exercise networkpolicy calico
 
-## Prepare (Step 0: :o)):
-
-  * Use a specific namespace for that
-
-```
-kubectl create ns nptest 
-kubectl config set-context --current --namespace=nptest 
-```
-
-
 ## Step 1: Set global policy
 
 ```
@@ -53,7 +43,7 @@ spec:
 kubectl apply -f . 
 ```
 
-## Step 2: nginx ausrollen aus manifests/04-service und testen
+## Step 2: Namespace nptest ausrollen aus manifests/04-service und testen
 
 ```
 # pod in anderem namespace starten
@@ -123,11 +113,29 @@ spec:
 kubectl apply -f . 
 ```
 
+## Step 3: Namespace fremd ausrollen aus manifests/04-service und testen
+
+```
+kubectl create ns fremd
+```
+
+```
+# gleiche Applikation im anderen namespace ausrollen
+kubectl -n fremd apply -f .
+```
+
+## Step 4: Testen im eigenen Namespace "nptest" und zum -> anderen
+
+
 ```
 kubectl run -it --rm access --image=busybox 
 ```
+
+**Testen zum svc-nginx-Dienst im eigenen Namespace und google**
+
 ```
-# In der Busybox 
+# In der Busybox
+# Testinnerhalb meines namespaces 
 # bekomme die Ausgabe des Ziels nicht 
 wget -O - http://svc-nginx 
 # Google geht auch nicht
@@ -136,25 +144,17 @@ wget -O - http://www.google.de
 nslookup www.google.de
 ```
 
+**Test zum svc-nginx.fremd - Dienst - also im anderen Namespace**
+
 ```
-# test mit pod im somewhere namespace
-# wget -O - http://<ip-deines-somewhere-pods>
+# test mit pod im **fremd** namespace
+wget -O - http://svc-nginx.fremd 
 # z.B. 
 wget -O - 192.168.46.20
 # --> geht auch nicht 
 ```
 
 ## Step 3: Traffic erlauben egress von busybox 
-
-  * Achtung: Sei wachsam Holzauge 
-
-```
-cd
-cd manifests
-mkdir cnp
-cd cnp
-```
-
 
 ```
 # vi 02-egress-allow-busybox.yml
@@ -163,6 +163,7 @@ kind: NetworkPolicy
 metadata:
   name: allow-busybox-egress
 spec:
+  order: 10
   selector: run == 'access'
   types:
   - Egress
@@ -171,7 +172,7 @@ spec:
 ```
 
 ```
-kubectl apply -f . 
+kubectl apply -f 02-egress-allow-busybox.yml
 ```
 
 ```
@@ -183,7 +184,15 @@ kubectl run -it --rm access --image=busybox
 wget -O - http://www.google.de
 
 # sollte nicht funktionieren
-wget -O - http://my-nginx
+wget -O - http://svc-nginx
+
+# sollte nicht funktionieren
+# Ausgehender Traffic geht zwar, aber eingehender
+# Traffic ist nicht gesetzt (auch nicht im anderen namespace
+# Hier haben wir bisher noch keine Regeln
+wget -O - http://svc-nginx.fremd 
+
+
 ```
 
 ## Step 4: Traffic erlauben für nginx 
@@ -195,7 +204,9 @@ kind: NetworkPolicy
 metadata:
   name: allow-nginx-ingress
 spec:
-  selector: run == 'my-nginx'
+  order: 20 
+# für welche pods soll das gelten 
+  selector:  web == 'my-nginx'
   types:
   - Ingress
   ingress:
@@ -213,7 +224,7 @@ kubectl run -it --rm access --image=busybox
 ```
 
 ```
-# In der Bbusybox 
+# In der Busybox 
 wget -O - http://my-nginx 
 ```
 
@@ -230,6 +241,7 @@ kind: NetworkPolicy
 metadata:
   name: allow-ingress-controller-to-nginx
 spec:
+  order: 30
   selector: web == 'my-nginx'
   types:
   - Ingress
