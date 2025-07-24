@@ -1,5 +1,15 @@
 # Exercise networkpolicy calico
 
+## Prepare (Step 0: :o)):
+
+  * Use a specific namespace for that
+
+```
+kubectl create ns nptest 
+kubectl config set-context --current --namespace=nptest 
+```
+
+
 ## Step 1: Set global policy
 
 ```
