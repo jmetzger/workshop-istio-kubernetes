@@ -220,7 +220,7 @@ kubectl get pod test-non-root-pod
 kubectl exec test-non-root-pod -- id
 ```
 
-## Step 6.1 Test with SecurityContext:runasNonRoot in container 
+## Step 6.1 Test with SecurityContext:runasNonRoot not set in container 
 
 ```
 nano  test-non-root-pod-v2.yaml
@@ -239,7 +239,6 @@ spec:
   - name: nginx
     image: bitnami/nginx:1.27.0
     securityContext:
-      runAsNonRoot: true
       allowPrivilegeEscalation: false
       readOnlyRootFilesystem: false
 ```
