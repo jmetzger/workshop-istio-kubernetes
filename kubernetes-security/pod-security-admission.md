@@ -155,7 +155,7 @@ kubectl delete -f 02-nginx.yml
 kubectl apply -f 02-nginx.yml
 # von api-server angenommen, ausgerollt, aber kann nicht gestartet werden
 kubectl -n test-ns1 get pods
-kbuectl -n test-ns1 describe pods 
+kubectl -n test-ns1 describe pods 
 ```
 
 <img width="1454" height="106" alt="image" src="https://github.com/user-attachments/assets/a3565e6c-04da-413c-942c-3a325394500b" />
@@ -183,6 +183,9 @@ spec:
         seccompProfile:
           type: RuntimeDefault
         runAsNonRoot: true
+        allowPrivilegeEscalation: false
+        capabilities:
+          drop: ["ALL"]
 ```
 
 ```
