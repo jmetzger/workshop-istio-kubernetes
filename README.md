@@ -109,7 +109,10 @@
      * [istio security features](istio/overview/security-features.md)
      * [istio-service mesh - ambient mode](/istio/overview/ambient-mode.md)
      * [Performance comparison - baseline,sidecar,ambient](/istio/overview/performance-comparison-baseline-sidecar-ambient.md)
-     
+
+  1. Passwörter speichern
+     * [HashiCorp Vault as Password Safe](security/hashicorp-vault/overview.md)
+  
   1. Image Security
      * [When to scan ?](security/scanning-containers/01-when-to-scan.md)
      * [Example Image Security Scanning - using gitlab and trivy](security/scanning-containers/02-example-trivy-gitlab.md)
