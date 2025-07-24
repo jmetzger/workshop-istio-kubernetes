@@ -4,12 +4,35 @@
 
   * Introducted Tiers
 
-## Ordering  
+## Ordering  (no order set)
 
   * For the default deny GlobalNetworkPolicy use no order
     * it will then be evaluated as last rule (catch all)
 
   * **Ref:** https://docs.tigera.io/calico-cloud/network-policy/default-deny
+
+## Ordering with Number for GlobalNetworkPolicy and NetworkPolicy 
+
+```
+GlobalNetworkPolicies and NetworkPolicies from calico are mixed
+They are all sorted by order
+
+NetworkPolicy A order 50
+GlobalNetworkPolicy B order 100
+GlobalNetworkPolicy C order 70
+NetworkPolicy D order 80
+```
+
+```
+results in this execution order -->
+```
+
+```
+NetworkPolicy A order 50
+GlobalNetworkPolicy C order 70
+NetworkPolicy D order 80
+GlobalNetworkPolicy B order 100
+```
 
 ## Implicit Deny 
 
