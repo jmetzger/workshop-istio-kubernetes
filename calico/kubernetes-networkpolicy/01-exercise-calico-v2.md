@@ -149,8 +149,6 @@ nslookup www.google.de
 ```
 # test mit pod im **fremd** namespace
 wget -O - http://svc-nginx.fremd 
-# z.B. 
-wget -O - 192.168.46.20
 # --> geht auch nicht 
 ```
 
