@@ -1,5 +1,7 @@
 # Hashicorp Vault (VSO) 
 
+## Untested ! 
+
 # Complete HashiCorp Vault Setup Exercise with Kubernetes, Helm, and Vault Secrets Operator
 
 ## Step 1: Create Project Structure
