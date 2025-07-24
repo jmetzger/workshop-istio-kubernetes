@@ -48,6 +48,7 @@ spec:
 
 ```
 kubectl apply -f .
+kubectl get crd | grep -i block 
 ```
 
 ## Step 2: Create constraint 
