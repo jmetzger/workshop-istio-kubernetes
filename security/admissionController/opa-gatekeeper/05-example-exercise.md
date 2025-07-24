@@ -95,12 +95,15 @@ spec:
 
 ```
 kubectl apply -f .
-# should no appear 
-kubectl get svc my-service-disallowed
 ```
 
 ```
 Error from server (Forbidden): error when creating "03-service.yaml":
 admission webhook "validation.gatekeeper.sh" denied the request:
 [block-node-port] User is not allowed to create service of type NodePort
+```
+
+```
+# should no appear 
+kubectl get svc my-service-disallowed
 ```
