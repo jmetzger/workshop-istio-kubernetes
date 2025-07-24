@@ -168,6 +168,8 @@ spec:
 
 ```
 kubectl apply -f 02-egress-allow-busybox.yml
+# cnp = calico network policy
+kubectl get all,cnp
 ```
 
 ```
