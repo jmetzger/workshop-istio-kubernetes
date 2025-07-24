@@ -22,6 +22,9 @@
      * [Exercise: kube-bench - scanning with cis-benchmark-kubernetes](security/cis-benchmark-kubernetes/exercise.md)
      * [OWASP - Top Ten Kubernetes Risks](https://owasp.org/www-project-kubernetes-top-ten/2022/en/src/K09-misconfigured-cluster-components)
 
+  1. Scanning for outdated versions of images and helm-charts
+     * [Scanning for outdated versions](security/veraltete-images-und-helm-charts-finden.md)
+
   1. Encrypting Node-2-Node traffic (wireguard with calico)
      * [Securing Node-2-Node with calico and wireguard](security/wireguard-calico/overview-and-exercise.md)
 
