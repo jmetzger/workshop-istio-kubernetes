@@ -4,10 +4,10 @@
 
 1. Grundlagen ServiceMesh & Istio
    * [Einführung in Istio & Service Mesh-Architekturen](/istio/overview/introduction.md)
-   * [Warum ein Service Mesh?]()
-   * [Herausforderung & Vorteile]()
-   * Architektur & Komponenten von Istio
-   * Vergleich mit Linkerd, Cilium, Consul
+   * [Warum ein Service Mesh?](istio/overview/02-warum-servicemesh.md)
+   * [Herausforderung & Vorteile](istio/overview/03-herausforderungen-vorteile.md)
+   * [Architektur & Komponenten von Istio](istio/overview/04-architektur-komponenten.md)
+   * [Vergleich mit Linkerd, Cilium, Consul](istio/overview/05-vergleich-linkerd-cilium-consul.md)
 
 1. Setup Cluster
    * [Self-Service Cluster ausrollen](/istio/training-stack/install.md)
