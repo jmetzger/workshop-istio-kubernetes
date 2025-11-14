@@ -13,6 +13,12 @@
   * Hinweis: /tmp/.env beinhaltet Digitalocean Access Token der für das einrichten benötigt wird.
 
 ```
+# /tmp/.env - Datei wurde vom Trainer vorbereitet
+# Inhalt
+TF_VAR_do_token="DAS_TOKEN_FUER_DIGITALOCEAN"
+```
+
+```
 cd
 git clone https://github.com/jmetzger/training-istio-kubernetes-stack-do-terraform.git install
 cd install
