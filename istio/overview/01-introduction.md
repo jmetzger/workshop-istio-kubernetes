@@ -21,6 +21,8 @@ graph TB
     A1 -.-> C1[Service C]
     B1 -.-> C1
     end
+```
+
 
 ```mermaid
 graph TB
@@ -57,35 +59,3 @@ graph TB
 
 
 
-## Source / Mermaid 
-
-```mermaid
-graph LR
-    subgraph "Ohne Service Mesh"
-    A1[Service A] -.-> B1[Service B]
-    A1 -.-> C1[Service C]
-    B1 -.-> C1
-    B1 -.-> D1[Service D]
-    C1 -.-> D1
-    end
-```
-    
-```mermaid
-graph LR
-    subgraph "Mit Service Mesh"
-    A2[Service A] --> PA[Envoy Proxy]
-    B2[Service B] --> PB[Envoy Proxy]
-    C2[Service C] --> PC[Envoy Proxy]
-    D2[Service D] --> PD[Envoy Proxy]
-    PA <--> PB
-    PA <--> PC
-    PB <--> PC
-    PB <--> PD
-    PC <--> PD
-    end
-    
-    style PA fill:#4285f4
-    style PB fill:#4285f4
-    style PC fill:#4285f4
-    style PD fill:#4285f4
-```
