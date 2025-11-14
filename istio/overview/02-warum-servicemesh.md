@@ -18,6 +18,7 @@
 
 ## Vorher: Ohne ServiceMesh 
 
+<img width="706" height="641" alt="image" src="https://github.com/user-attachments/assets/674b1787-4903-48c7-8b1c-a72b0c424556" />
 
 
 ## Nachher: Mit ServiceMesh
@@ -26,7 +27,7 @@
 
 
 
-```mermaid
+```
 graph TD
     subgraph "Problem: Jeder Service implementiert selbst"
     SJ[Service Java] --> |implementiert| LJ[Load Balancing<br/>Retry<br/>mTLS<br/>Tracing]
