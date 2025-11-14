@@ -24,7 +24,10 @@ graph LR
     B1 -.-> D1[Service D]
     C1 -.-> D1
     end
+```
     
+```mermaid
+graph LR
     subgraph "Mit Service Mesh"
     A2[Service A] --> PA[Envoy Proxy]
     B2[Service B] --> PB[Envoy Proxy]
