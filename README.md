@@ -3,8 +3,8 @@
 ## Agenda
 
 1. Grundlagen & Installation von Istio
-   * [Einführung in Istio & Service Mesh-Architekturen](/istio/introduction.md)
-   * Warum Service Mesh? Herausforderungen & Vorteile
+   * [Einführung in Istio & Service Mesh-Architekturen](/istio/overview/introduction.md)
+   * [Warum Service Mesh? Herausforderungen & Vorteile]()
    * Architektur & Komponenten von Istio
    * Vergleich mit Linkerd, Cilium, Consul
 
