@@ -6,11 +6,8 @@
       1. 3 worker nodes
       1. metallb mit ip's (IP-Adressen) der Nodes (hacky but works)
       1. ingress mit wildcard-domain:  *.tlnx.do.t3isp.de
-   
-## Walktrough 
 
-  * Setup takes about 6-7 minutes
-  * Hinweis: /tmp/.env beinhaltet Digitalocean Access Token der für das einrichten benötigt wird.
+## Vorbereitung seitens des Trainers
 
 ```
 # /tmp/.env - Datei wurde vom Trainer vorbereitet
@@ -23,8 +20,11 @@ Folgende Berechtigungen wurden für das Token gesetzt
 ```
 
 <img width="793" height="656" alt="image" src="https://github.com/user-attachments/assets/5b1b279c-e6fa-4ec3-9948-e4cc21e1eaf6" />
+   
+## Walktrough 
 
-
+  * Setup takes about 6-7 minutes
+  * Hinweis: /tmp/.env beinhaltet Digitalocean Access Token der für das einrichten benötigt wird.
 
 ```
 cd
@@ -35,7 +35,6 @@ source /tmp/.env
 terraform init
 terraform apply -auto-approve
 ```
-
 ## Hinweis
 
 ```
