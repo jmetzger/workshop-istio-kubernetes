@@ -2,7 +2,7 @@
 
 ## Agenda
 
-1. Grundlagen & Installation von Istio
+1. Grundlagen ServeMesh & Istio
    * [Einführung in Istio & Service Mesh-Architekturen](/istio/overview/introduction.md)
    * [Warum ein Service Mesh?]()
    * [Herausforderung & Vorteile]()
