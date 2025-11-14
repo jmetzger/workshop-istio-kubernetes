@@ -2,6 +2,12 @@
 
 ## Agenda
 
+1. Vorbereitung
+     * [Self-Service Cluster ausrollen](/monitoring/training-stack/install.md)
+     * [Self-Service Cluster destroy](/monitoring/training-stack/uninstall.md)
+
+
+
 1. Grundlagen & Installation von Istio
    * Einführung in Istio & Service Mesh-Architekturen
    * Warum Service Mesh? Herausforderungen & Vorteile
