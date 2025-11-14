@@ -1,6 +1,65 @@
 # Kubernetes Security
 
-## Agenda 
+# Agenda
+
+1. Grundlagen & Installation von Istio
+   * Einführung in Istio & Service Mesh-Architekturen
+   * Warum Service Mesh? Herausforderungen & Vorteile
+   * Architektur & Komponenten von Istio
+   * Vergleich mit Linkerd, Cilium, Consul
+
+1. Installation & Bereitstellung von Istio
+   * Systemanforderungen & Kubernetes-Cluster-Vorbereitung
+   * Istio-Installation mit istioctl, Helm & Istio-Operator
+   * Einführung in Sidecar Injection & Proxy-Konzepte
+
+1. Steuerung des Netzwerkverhaltens in Istio
+   * Virtual Services, Destination Rules & Gateway-API
+   * Load Balancing, Header- & Pfadbasiertes Routing
+   * Erstellen von Routing- & Load-Balancing-Regeln
+
+1. Sicherheit, Fehlertoleranz & Observability
+   * Sicherheit & Zero Trust mit Istio
+   * Service-zu-Service-Sicherheit mit mTLS (Mutual TLS)
+   * Zugriffskontrolle mit RBAC & JWT-Authentifizierung
+   * Istio Authorization Policies (ingress/egress Security)
+   * Sichere Service-Kommunikation mit Istio konfigurieren
+
+1. Service Resilience & Fehlertoleranz
+   * Circuit Breaker, Retries, Rate Limiting
+   * Fehlerinjektion & Chaos Engineering mit Istio
+   * Belastungstests mit Fehlerinjektionen
+
+1. Monitoring, Logging & Observability
+   * Distributed Tracing mit Jaeger
+   * Metriken & Dashboards mit Prometheus & Grafana
+   * Service-Visualisierung mit Kiali
+   * Analyse & Debugging von Service-Mesh-Daten
+
+1. Skalierung, Erweiterbarkeit & Performance-Optimierung
+   * Skalierung von Istio & Performance-Optimierung
+   * Sidecar-Overhead & Ressourcenoptimierung
+   * Ambient Mesh (sidecar-less Istio für Performance-Gewinn)
+   * Multi-Cluster- & Hybrid-Umgebungen mit Istio
+   * Istio Federation & Cross-Cluster Traffic
+
+1. Erweiterte Routing-Techniken & Traffic-Optimierung
+   * Canary Releases & Progressive Deployments
+   * A/B-Tests & Traffic Mirroring
+   * Blue-Green- und Canary-Deployments mit Istio
+
+1. Erweiterbarkeit & Automatisierung mit Istio
+   * WebAssembly (Wasm) für Istio-Erweiterungen
+   * Automatisierung mit GitOps & ArgoCD
+   * Eigene Istio-Erweiterungen mit WebAssembly schreiben
+
+1. FAQ & Best Practices
+   * Zusammenfassung der wichtigsten Erkenntnisse
+   * Diskussion von Best Practices für Enterprise-Anwendungen
+   * Fragen & weiterführende Ressourcen
+
+
+## Backlog 
 
   1. Vorbereitung
      * [Self-Service Cluster ausrollen](/monitoring/training-stack/install.md)
