@@ -2,16 +2,16 @@
 
 ## Agenda
 
-1. Vorbereitung
-   * [Self-Service Cluster ausrollen](/istio/training-stack/install.md)
-   * [Self-Service Cluster destroy](/istio/training-stack/uninstall.md)
-     
 1. Grundlagen & Installation von Istio
-   * Einführung in Istio & Service Mesh-Architekturen
+   * [Einführung in Istio & Service Mesh-Architekturen](/istio/introduction.md)
    * Warum Service Mesh? Herausforderungen & Vorteile
    * Architektur & Komponenten von Istio
    * Vergleich mit Linkerd, Cilium, Consul
 
+1. Setup Cluster
+   * [Self-Service Cluster ausrollen](/istio/training-stack/install.md)
+   * [Self-Service Cluster destroy](/istio/training-stack/uninstall.md)
+    
 1. Installation & Bereitstellung von Istio
    * Systemanforderungen & Kubernetes-Cluster-Vorbereitung
    * Istio-Installation mit istioctl, Helm & Istio-Operator
