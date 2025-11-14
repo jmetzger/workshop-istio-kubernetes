@@ -1,6 +1,6 @@
-# Kubernetes Security
+# Istio & Kubernetes 
 
-# Agenda
+## Agenda
 
 1. Grundlagen & Installation von Istio
    * Einführung in Istio & Service Mesh-Architekturen
