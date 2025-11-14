@@ -18,8 +18,12 @@
 - Hohe Security/Compliance-Anforderungen
 - Multi-Team-Umgebungen
 
-```mermaid
-graph TD
+<img width="1363" height="327" alt="image" src="https://github.com/user-attachments/assets/432a1941-3eed-4721-a933-b57a8243b634" />
+
+
+
+```
+graph LR
     START{Service Mesh einsetzen?}
     
     START --> Q1{Wie viele Services?}
@@ -39,13 +43,3 @@ graph TD
     style GO fill:#51cf66
     style MAYBE fill:#ffd93d
 ```
-
-**Entscheidungskriterien:**
-
-| Kriterium | Ohne Service Mesh | Mit Service Mesh |
-|-----------|-------------------|------------------|
-| Services | < 10 | > 20 |
-| Security Anforderungen | Niedrig | Hoch |
-| Teams | 1-2 | 3+ |
-| Compliance | Optional | Erforderlich |
-| Ressourcen | Begrenzt | Ausreichend |
