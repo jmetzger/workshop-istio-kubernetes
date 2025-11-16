@@ -1,5 +1,32 @@
 # Ingress Istio-Gateway vs. Kubernetes Gateway API 
 
+## Istio Gateway
+
+<img width="1267" height="184" alt="image" src="https://github.com/user-attachments/assets/41d95be5-8713-4533-9821-ea8e2ed5a0f5" />
+
+## Gateway API 
+
+graph TB
+    Client[Client/Browser]
+    GWC[GatewayClass<br/>infrastructure.cluster.x-k8s.io]
+    GW[Gateway<br/>gateway.networking.k8s.io]
+    HR[HTTPRoute<br/>routing rules]
+    SvcA[Service A]
+    SvcB[Service B]
+    
+    Client -->|HTTP/HTTPS| GW
+    GW -.->|instance of| GWC
+    HR -.->|attached to| GW
+    HR -->|route to| SvcA
+    HR -->|route to| SvcB
+    
+    style GWC fill:#d4edda
+    style GW fill:#d4edda
+    style HR fill:#d4edda
+
+
+## Bild-Quelltext (Istio)
+
 ```mermaid
 graph LR
     Client[Client/Browser]
@@ -19,3 +46,6 @@ graph LR
     style GW fill:#fff3cd
     style VS fill:#fff3cd
 ```
+
+## Bild-Quelltext (Kubernetes Gateway API)
+
