@@ -12,4 +12,5 @@ kubectl label namespace bookinfo istio-injection=enabled
 
 ```
 kubectl -n bookinfo apply -f  ~/istio/samples/bookinfo/platform/kube/bookinfo.yaml
+kubectl -n bookinfo get all 
 ```
