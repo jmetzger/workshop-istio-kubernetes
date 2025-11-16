@@ -28,6 +28,8 @@ cat istio-manifest.yaml | grep -i -A20 "^Kind" | less
 
 ## Installation including Demo 
 
+  * This profile (demo) enables high levels of tracing and access logging so it is not suitable for performance tests.
+
 ### Schritt 1: istio runterladen und installieren 
 
 ```
@@ -44,6 +46,13 @@ source ~/.bashrc
 ```
 cp ~/istio/tools/istioctl.bash ~/istioctl.bash 
 source ~/istioctl.bash
+```
+
+### Schritt 2.5. See what it would install 
+
+```
+# dry-run 
+istioctl install -f ~/istio/samples/bookinfo/demo-profile-no-gateways.yaml -y --dry-run
 ```
 
 ### Schritt 3: Installation with demo (by using operator)
