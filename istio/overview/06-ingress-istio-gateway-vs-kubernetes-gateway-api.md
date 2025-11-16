@@ -6,6 +6,7 @@
 
 ## Gateway API 
 
+```mermaid
 graph TB
     Client[Client/Browser]
     GWC[GatewayClass<br/>infrastructure.cluster.x-k8s.io]
@@ -23,7 +24,7 @@ graph TB
     style GWC fill:#d4edda
     style GW fill:#d4edda
     style HR fill:#d4edda
-
+```
 
 ## Bild-Quelltext (Istio)
 
