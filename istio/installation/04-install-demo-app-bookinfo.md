@@ -18,3 +18,9 @@ kubectl label namespace bookinfo istio-injection=enabled
 kubectl -n bookinfo apply -f  ~/istio/samples/bookinfo/platform/kube/bookinfo.yaml
 kubectl -n bookinfo get all 
 ```
+
+## testen ob die app funktioniert 
+
+```
+kubectl -n bookinfo exec "$(kubectl -n bookinfo get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}')" -c ratings -- curl -sS productpage:9080/productpage | grep -o "<title>.*</title>"
+```
