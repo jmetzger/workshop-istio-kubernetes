@@ -42,6 +42,13 @@ echo "export PATH=~/istio-1.28.0/bin:$PATH" >> ~/.bashrc
 source ~/.bashrc 
 ```
 
+### Schritt 2: bash completion integrieren 
+
+```
+cp ~/istio-1.28.0/tools/istoctl.bash ~/istioctl.bash 
+source ~/istioctl.bash
+```
+
 ## Reference: Get started 
 
   * https://istio.io/latest/docs/setup/getting-started/
