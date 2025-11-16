@@ -26,7 +26,8 @@ cat istio-manifest.yaml | grep -i -A20 "^Kind" | less
 
 ## Installation including Demo 
 
-  * This profile (demo) enables high levels of tracing and access logging so it is not suitable for performance tests.
+> [!CAUTION]
+> This profile (demo) enables high levels of tracing and access logging so it is not suitable for performance tests.
 
 ### Schritt 1: istio runterladen und installieren 
 
