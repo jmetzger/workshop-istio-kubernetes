@@ -73,6 +73,13 @@ spec:
 istioctl install -f ~/istio/samples/bookinfo/demo-profile-no-gateways.yaml -y
 ```
 
+### Schritt 4: Gateway API's CRD's installieren 
+
+```
+kubectl get crd gateways.gateway.networking.k8s.io &> /dev/null || \
+{ kubectl kustomize "github.com/kubernetes-sigs/gateway-api/config/crd?ref=v1.4.0" | kubectl apply -f -; }
+```
+
 ## Reference: Get started 
 
   * https://istio.io/latest/docs/setup/getting-started/
