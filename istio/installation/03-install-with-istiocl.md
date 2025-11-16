@@ -28,6 +28,23 @@ cat istio-manifest.yaml | grep -i -A20 "^Kind" | less
 # If you want you can apply it like so:
 # kubectl apply -f istio-manifest.yaml 
 
+```
 
+## Installation including Demo 
+
+### Schritt 1: istio runterladen und installieren 
 
 ```
+VERSION_ISTIO="1.28.0"
+cd 
+curl -L https://istio.io/downloadIstio | sh -
+mv istio-* istio
+echo "export PATH=~/istio/bin:$PATH" >> ~/.bashrc
+```
+
+
+
+
+## Reference: Get started 
+
+  * https://istio.io/latest/docs/setup/getting-started/
