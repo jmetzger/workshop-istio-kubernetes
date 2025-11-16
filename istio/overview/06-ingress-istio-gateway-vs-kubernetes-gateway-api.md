@@ -1,7 +1,7 @@
 # Ingress Istio-Gateway vs. Kubernetes Gateway API 
 
 ```mermaid
-graph TB
+graph LR
     Client[Client/Browser]
     IG[Istio IngressGateway<br/>istio-ingressgateway Pod]
     GW[Gateway Resource<br/>istio.networking.v1beta1]
