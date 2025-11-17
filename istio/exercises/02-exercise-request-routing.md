@@ -25,7 +25,11 @@ kubectl -n bookinfo get pods -l app=reviews --show-labels
 ```bash
 mkdir -p ~/manifests/requests
 cd ~/manifests/requests
-````
+
+# Die Service-Versionen anlegen
+cp -a ~/istio/samples/bookinfo/platform/kube/bookinfo-versions.yaml bookinfo-versions.yaml
+kubectl apply -f .
+```
 
 ---
 
@@ -50,7 +54,7 @@ spec:
       port: 9080
 EOF
 
-kubectl apply -f ~/manifests/requests/httproute-reviews-v1.yaml
+kubectl apply -f httproute-reviews-v1.yaml
 kubectl get httproute reviews -n bookinfo
 ```
 
@@ -84,7 +88,7 @@ spec:
       port: 9080
 EOF
 
-kubectl apply -f ~/manifests/requests/httproute-reviews-jason-v2.yaml
+kubectl apply -f httproute-reviews-jason-v2.yaml
 kubectl get httproute reviews -n bookinfo -o yaml
 ```
 
