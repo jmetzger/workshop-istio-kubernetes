@@ -59,6 +59,7 @@ metadata:
     nginx.ingress.kubernetes.io/auth-secret: kiali-basic-auth
     nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - kiali'
 spec:
+  ingressClassName: "nginx"
   rules:
     - host: kiali.tlnXX.do.t3isp.de
       # ⬆️ Each trainee replaces "XX" with their number, e.g. kiali.tln10.do.t3isp.de
@@ -75,4 +76,9 @@ spec:
 
 ```
 kubectl apply -f .
+```
+
+```
+# Im browser aufrufen und credentials eingeben (s.o.)
+http://kiali.tlnXX.do.t3isp.de
 ```
