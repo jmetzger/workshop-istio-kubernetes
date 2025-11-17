@@ -1,5 +1,10 @@
 # Install kiali inkl. Ingress (Ingress-Controller must be installed) 
 
+## Prerequisites 
+
+  * *.tlnx.do.t3isp.de subdomain is already set up and pointing to your cluster
+  * 
+
 ## Step 1: Install addon kiali 
 
 ```
@@ -36,3 +41,5 @@ data:
 ```
 kubectl apply -f .
 ```
+
+### Step 3: Setup Ingress 
