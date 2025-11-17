@@ -28,7 +28,7 @@ cd ~/manifests/requests
 
 # Die Service-Versionen anlegen
 cp -a ~/istio/samples/bookinfo/platform/kube/bookinfo-versions.yaml bookinfo-versions.yaml
-kubectl apply -f .
+kubectl -n bookinfo apply -f .
 ```
 
 ---
