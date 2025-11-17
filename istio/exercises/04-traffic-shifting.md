@@ -47,6 +47,39 @@ http://<deine-ip>/productpage
 # Egal wie oft du die Seite lädst, es bleibt immer v1
 ```
 
+### 3. 50% (v1) /50% (v3) Traffic
+
+```
+cat <<'EOF' > ~/manifests/traffic-shifting/route-reviews-50-50.yaml
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: reviews
+  namespace: bookinfo
+spec:
+  parentRefs:
+  - group: ""
+    kind: Service
+    name: reviews
+    port: 9080
+  rules:
+  - backendRefs:
+    - name: reviews-v1
+      port: 9080
+      weight: 50
+    - name: reviews-v3
+      port: 9080
+      weight: 50
+EOF
+```
+
+```bash
+kubectl apply -n bookinfo -f route-reviews-50-50.yaml
+kubectl get httproute -n bookinfo reviews -o yaml | head -n 40
+```
+
+
+
 
 
 ## Reference:
