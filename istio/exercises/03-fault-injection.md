@@ -37,3 +37,9 @@ kubectl -n bookinfo apply -f virtual-service-ratings-test-abort.yaml
 
 
   * Reviews gehen wieder 
+
+### Step 5: Cleanup 
+
+``` 
+kubectl delete -f virtual-service-all-v1.yaml
+```
