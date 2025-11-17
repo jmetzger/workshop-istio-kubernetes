@@ -130,8 +130,10 @@ done
 ## 4. Aufräumen
 
 ```bash
-kubectl delete -f ~/manifests/requests/httproute-reviews-v1.yaml --ignore-not-found
-kubectl delete -f ~/manifests/requests/httproute-reviews-jason-v2.yaml --ignore-not-found
+kubectl delete -f httproute-reviews-v1.yaml --ignore-not-found
+kubectl delete -f httproute-reviews-jason-v2.yaml --ignore-not-found
 ```
 
+## Reference: 
 
+  * https://istio.io/latest/docs/examples/bookinfo/#define-the-service-versions
