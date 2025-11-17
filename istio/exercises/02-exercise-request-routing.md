@@ -58,6 +58,12 @@ kubectl apply -f httproute-reviews-v1.yaml
 kubectl -n bookinfo get httproute reviews -n bookinfo
 ```
 
+```
+# Anzeige im Browser - es ist immer die v1
+http://164.90.237.35/productpage
+```
+
+
 ---
 
 ### 2. HTTPRoute anpassen: User `jason` → `reviews-v2`, Rest → `reviews-v1`
