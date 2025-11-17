@@ -23,7 +23,7 @@ kubectl -n bookinfo apply -f .
 
 ```
 cp -a ~/istio/samples/bookinfo/networking/virtual-service-ratings-test-abort.yaml . 
-kubectl apply -f virtual-service-ratings-test-abort.yaml 
+kubectl -n bookinfo apply -f virtual-service-ratings-test-abort.yaml 
 ```
 
 
