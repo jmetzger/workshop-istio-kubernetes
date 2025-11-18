@@ -56,12 +56,17 @@ metadata:
   annotations:
     nginx.ingress.kubernetes.io/auth-type: basic
     nginx.ingress.kubernetes.io/auth-secret: prometheus-basic-auth
-    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - kiali'
+    nginx.ingress.kubernetes.io/auth-realm: 'Authentication Required - prometheus'
+    nginx.ingress.kubernetes.io/hsts: "false"
+    nginx.ingress.kubernetes.io/hsts-max-age: "0"
+    nginx.ingress.kubernetes.io/hsts-include-subdomains: "false"
+    nginx.ingress.kubernetes.io/hsts-preload: "false"
+
 spec:
   ingressClassName: "nginx"
   rules:
-    - host: prometheus.tlnXX.do.t3isp.de
-      # ⬆️ Each trainee replaces "XX" with their number, e.g. prometheus.tln10.do.t3isp.de
+    - host: prometheus.tln10.do.t3isp.de
+      # ⬆️ Each trainee replaces "XX" with their number, e.g. kiali.tln10.do.t3isp.de
       http:
         paths:
           - path: /
