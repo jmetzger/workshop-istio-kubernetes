@@ -47,6 +47,8 @@
 1. Monitoring, Logging & Observability
    * Distributed Tracing mit Jaeger
    * Metriken & Dashboards mit Prometheus & Grafana
+   * [Installation Prometheus Addon with Ingress](istio/installation/addons/prometheus.md)
+   * [Installation Grafana Addon with Ingress](istio/installation/addons/grafana.md)
    * [Service-Visualisierung mit Kiali // Installation](istio/installation/addons/kiali.md)
    * Analyse & Debugging von Service-Mesh-Daten
 
