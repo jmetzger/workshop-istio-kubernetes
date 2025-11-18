@@ -50,7 +50,7 @@
    * [Installation Prometheus Addon with Ingress](istio/installation/addons/prometheus.md)
    * [Installation Grafana Addon with Ingress](istio/installation/addons/grafana.md)
    * [Installaton Kiali // Installation](istio/installation/addons/kiali.md)
-   * [Visualisierung mit Kiali](istio/exercises/04-kiali.md)
+   * [Visualisierung mit Kiali](istio/exercises/05-kiali-traffic.md)
    * Analyse & Debugging von Service-Mesh-Daten
 
 1. Skalierung, Erweiterbarkeit & Performance-Optimierung
