@@ -51,7 +51,7 @@ nano ingress.yaml
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: kiali
+  name: prometheus
   namespace: istio-system
   annotations:
     nginx.ingress.kubernetes.io/auth-type: basic
@@ -61,7 +61,7 @@ spec:
   ingressClassName: "nginx"
   rules:
     - host: prometheus.tlnXX.do.t3isp.de
-      # ⬆️ Each trainee replaces "XX" with their number, e.g. kiali.tln10.do.t3isp.de
+      # ⬆️ Each trainee replaces "XX" with their number, e.g. prometheus.tln10.do.t3isp.de
       http:
         paths:
           - path: /
@@ -70,7 +70,7 @@ spec:
               service:
                 name: prometheus
                 port:
-                  number: 20001
+                  number: 9090
 ```
 
 ```
