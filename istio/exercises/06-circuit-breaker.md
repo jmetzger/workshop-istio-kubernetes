@@ -6,6 +6,10 @@
 cd
 mkdir -p manifests/circuit-breaker
 cd manifests/circuit-breaker 
+
+cp -a ~/istio/samples/bookinfo/platform/kube/bookinfo-version.yaml .
+kubectl -n bookinfo apply -f . 
+
 ```
 
 ## Voraussetzungen 
