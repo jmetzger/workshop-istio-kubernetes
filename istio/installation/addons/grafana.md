@@ -72,7 +72,7 @@ spec:
               service:
                 name: grafana
                 port:
-                  number: 20001
+                  number: 3000
 ```
 
 ```
