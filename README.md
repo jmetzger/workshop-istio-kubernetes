@@ -40,7 +40,8 @@
 
 1. Service Resilience & Fehlertoleranz
    * [Circuit Breaker](istio/exercises/06-circuit-breaker.md)
-   * Retries, Rate Limiting
+   * [Retries](istio/exercises/07-retries.md)
+   * Rate Limiting
    * [Fehlerinjektion (z.B. 500er)](istio/exercises/03-fault-injection.md)
    * [Chaos Engineering mit Istio](https://istio.io/latest/docs/examples/microservices-istio/production-testing/)
    * Belastungstests mit Fehlerinjektionen
