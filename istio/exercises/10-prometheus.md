@@ -25,9 +25,32 @@ istio_requests_total
 # THEN -> Click Execute
 ```
 
+** This will show all the requests to istio **
 
+```
+# You can also click on Graph to see the graphical representation
+```
 
+<img width="815" height="416" alt="image" src="https://github.com/user-attachments/assets/2cd43b98-4069-4340-8d91-1199c041bb0c" />
 
+### Try other queries 
+
+```
+# 1. Only request to the productpage in namespace bookinfo 
+istio_requests_total{destination_service="productpage.bookinfo.svc.cluster.local"}
+```
+
+```
+# 2. Total count of all requests to v3 of the reviews service:
+istio_requests_total{destination_service="reviews.bookinfo.svc.cluster.local", destination_version="v3"}
+```
+
+```
+# 3.  This query returns the current total count of all requests to the v3 of the reviews service.
+# Rate of requests over the past 5 minutes to all instances of the productpage service:
+# =~ <- **ist ein regulärer Ausdruck** 
+rate(istio_requests_total{destination_service=~"productpage.*", response_code="200"}[5m])
+```
 
 ## Reference: 
 
