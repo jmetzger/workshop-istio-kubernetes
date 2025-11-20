@@ -47,7 +47,7 @@
    * Belastungstests mit Fehlerinjektionen
 
 1. Monitoring, Logging & Observability
-   * Distributed Tracing mit Jaeger
+   * [Distributed Tracing mit Jaeger](istio/exercises/09-tracing-jaeger.md)
    * Metriken & Dashboards mit Prometheus & Grafana
    * [Installation Prometheus Addon with Ingress](istio/installation/addons/prometheus.md)
    * [Installation Grafana Addon with Ingress](istio/installation/addons/grafana.md)
