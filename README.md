@@ -34,7 +34,7 @@
 1. Sicherheit, Fehlertoleranz & Observability
    * Sicherheit & Zero Trust mit Istio
    * Service-zu-Service-Sicherheit mit mTLS (Mutual TLS)
-   * Zugriffskontrolle mit RBAC & JWT-Authentifizierung
+   * [Übung Zugriffskontrolle mit RBAC & JWT-Authentifizierung](istio/exercises/12-jwt-rbac.md)
    * Istio Authorization Policies (ingress/egress Security)
    * Sichere Service-Kommunikation mit Istio konfigurieren
 
@@ -80,6 +80,3 @@
    * Diskussion von Best Practices für Enterprise-Anwendungen
    * Fragen & weiterführende Ressourcen
 
-
-ht forward hacking session of kubernetes](https://youtu.be/iD_klswHJQs?si=97rWNuAbGjLwCjpa)
-     * [github with manifests for creating bad pods](https://bishopfox.com/blog/kubernetes-pod-privilege-escalation#pod8)
