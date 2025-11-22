@@ -163,6 +163,13 @@ TOKEN_GROUP=$(curl https://raw.githubusercontent.com/istio/istio/release-1.28/se
 kubectl exec "$(kubectl get pod -l app=curl -n foo -o jsonpath={.items..metadata.name})" -c curl -n foo -- curl "http://httpbin.foo:8000/headers" -sS -o /dev/null -H "Authorization: Bearer $TOKEN_GROUP" -w "%{http_code}\n"
 ```
 
+## Step 11: Test with a token without group included 
+
+  * We use that TOKEN before, which had not group 
+
+```
+kubectl exec "$(kubectl get pod -l app=curl -n foo -o jsonpath={.items..metadata.name})" -c curl -n foo -- curl "http://httpbin.foo:8000/headers" -sS -o /dev/null -H "Authorization: Bearer $TOKEN" -w "%{http_code}\n"
+```
 
 
 ## Reference: 
