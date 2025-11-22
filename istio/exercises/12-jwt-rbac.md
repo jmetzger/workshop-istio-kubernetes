@@ -109,6 +109,17 @@ TOKEN=$(curl https://raw.githubusercontent.com/istio/istio/release-1.28/security
 echo $TOKEN
 ```
 
+```
+# Testing with allowed jwt
+kubectl exec "$(kubectl get pod -l app=curl -n foo -o jsonpath={.items..metadata.name})" -c curl -n foo -- curl "http://httpbin.foo:8000/headers" -sS -o /dev/null -H "Authorization: Bearer $TOKEN" -w "%{http_code}\n"
+```
+
+```
+# Testing without a jwt
+kubectl exec "$(kubectl get pod -l app=curl -n foo -o jsonpath={.items..metadata.name})" -c curl -n foo -- curl "http://httpbin.foo:8000/headers" -sS -o /dev/null -w "%{http_code}\n"
+```
+
+
 
 ## Reference: 
 
