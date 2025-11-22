@@ -157,7 +157,7 @@ kubectl apply -f 02-ap-group.yml
 TOKEN_GROUP=$(curl https://raw.githubusercontent.com/istio/istio/release-1.28/security/tools/jwt/samples/groups-scope.jwt -s) && echo "$TOKEN_GROUP" | cut -d '.' -f2 - | base64 --decode
 ```
 
-## Step 10: Test it with that token (so group1 muss be included) 
+## Step 10: Test it with that token (so group1 must be included) 
 
 ```
 kubectl exec "$(kubectl get pod -l app=curl -n foo -o jsonpath={.items..metadata.name})" -c curl -n foo -- curl "http://httpbin.foo:8000/headers" -sS -o /dev/null -H "Authorization: Bearer $TOKEN_GROUP" -w "%{http_code}\n"
