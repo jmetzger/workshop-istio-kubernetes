@@ -90,7 +90,7 @@ spec:
 ```
 
 ```
-kubectl apply -f 02-ap.yaml
+kubectl apply -f 02-ap.yml
 ```
 
 ## Step 7: Test access 
