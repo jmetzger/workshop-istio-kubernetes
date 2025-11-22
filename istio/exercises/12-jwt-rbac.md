@@ -146,6 +146,10 @@ spec:
       values: ["group1"]
 ```
 
+```
+kubectl apply -f 02-ap-group.yaml
+```
+
 ## Step 9: get token included a claim for a group 
 
 * Get the JWT that sets the groups claim to a list of strings: group1 and group2:
