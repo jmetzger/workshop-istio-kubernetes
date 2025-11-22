@@ -126,7 +126,6 @@ nano 02-ap-group.yml
 ```
 
 ```
-kubectl apply -f - <<EOF
 apiVersion: security.istio.io/v1
 kind: AuthorizationPolicy
 metadata:
