@@ -43,7 +43,8 @@ source ~/.bashrc
 ### Schritt 2: bash completion integrieren 
 
 ```
-cp ~/istio/tools/istioctl.bash ~/istioctl.bash 
+cp ~/istio/tools/istioctl.bash ~/istioctl.bash
+echo "source ~/istioctl.bash" >> ~/.bashrc
 source ~/istioctl.bash
 ```
 
