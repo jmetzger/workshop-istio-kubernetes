@@ -7,7 +7,8 @@
    * [Pod starten](/kubectl/run-with-example.md)
    * [Namespace/Arbeitsbereich konfigurieren](kubectl/kubectl-einrichten.md#arbeitsbereich-konfigurieren)
    * [Beispiel-Applikation](bauen-einer-webanwendung.md)
-   * [Übung ReplicaSet](kubectl-examples/01a-replicaset-nginx.md)
+   * [Übung ReplicaSet(nicht für Produktion)](kubectl-examples/01a-replicaset-nginx.md)
+   * [Übung Deployment](kubectl-examples/03-nginx-deployment.md)
 
 1. Grundlagen ServiceMesh & Istio
    * [Einführung in Istio & Service Mesh-Architekturen](/istio/overview/introduction.md)
