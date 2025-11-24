@@ -10,6 +10,9 @@
    * [Übung ReplicaSet(nicht für Produktion)](kubectl-examples/01a-replicaset-nginx.md)
    * [Übung Deployment](kubectl-examples/03-nginx-deployment.md)
 
+1. Services 
+   * [Debug Netzwerkverbindung zu Pod/Service](tipps-tricks/verbindung-zu-pod-testen.md)
+
 1. Spickzettel kubectl Kubernetes
    * [Spickzettel kubectl](kubectl/spickzettel.md)
 
