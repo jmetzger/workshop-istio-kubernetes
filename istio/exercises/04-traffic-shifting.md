@@ -13,28 +13,13 @@ kubectl -n bookinfo apply -f destination-rule-all.yaml
 ### 1. 100% Traffic -> reviews.v1 
 
 ```
-cat <<'EOF' > ~/manifests/traffic-shifting/route-reviews-v1.yaml
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
-metadata:
-  name: reviews
-  namespace: bookinfo
-spec:
-  parentRefs:
-  - group: ""
-    kind: Service
-    name: reviews
-    port: 9080
-  rules:
-  - backendRefs:
-    - name: reviews-v1
-      port: 9080
-EOF
+cat ~/istio/samples/bookinfo/networking/virtual-service-all-v1.yaml
+kubectl -n bookinfo apply -f ~/istio/samples/bookinfo/networking/virtual-service-all-v1.yaml
 ```
 
 ```
 kubectl apply -n bookinfo -f route-reviews-v1.yaml
-kubectl get httproute -n bookinfo reviews -o yaml | head -n 30
+kubectl get vs -n bookinfo reviews -o yaml | head -n 30
 ```
 
 ```
