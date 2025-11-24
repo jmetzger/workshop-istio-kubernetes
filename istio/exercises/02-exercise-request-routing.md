@@ -36,7 +36,7 @@ kubectl -n bookinfo apply -f destination-rule-all.yaml
 ### 1. VirtualService: Alle Requests → `reviews-v1`
 
 ```
-reviews-v1.yaml 
+nano reviews-v1.yaml 
 ```
 
 ```
@@ -54,6 +54,7 @@ spec:
         subset: v1
 ```
 
+```
 kubectl apply -f reviews-v1.yaml 
 kubectl -n bookinfo get virtualservice reviews -n bookinfo
 ```
