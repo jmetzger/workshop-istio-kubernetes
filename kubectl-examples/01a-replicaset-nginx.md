@@ -39,5 +39,6 @@ spec:
 ```
 
 ```
-kubectl apply -f rs.yml 
+kubectl apply -f rs.yml
+kubectl get all
 ```
