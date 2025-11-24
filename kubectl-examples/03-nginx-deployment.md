@@ -1,5 +1,7 @@
 # Example Deployment nginx 
 
+## Walkthrough 
+
 ```
 cd
 mkdir -p manifests
@@ -41,4 +43,29 @@ kubectl get all
 
 ```
 kubectl describe deploy nginx-deployment
+```
+
+## Optional: Change image - Version 
+
+```
+nano nginx-deployment.yml 
+```
+
+
+### Version 1: (optical nicer)
+
+```
+# Ändern des images von nginx:1.22 in nginx:1.23
+# danach 
+kubectl apply -f . && watch kubectl get pods 
+```
+
+### Version 2: 
+
+```
+# Ändern des images von nginx:1.22 in nginx:1.23
+# danach 
+kubectl apply -f .
+kubectl get all 
+kubectl get pods -w
 ```
