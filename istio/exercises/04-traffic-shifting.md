@@ -54,29 +54,9 @@ http://<deine-ip>/productpage
 ## 5. 100% auf v3 
 
 ```
-cat <<'EOF' > ~/manifests/traffic-shifting/route-reviews-v3.yaml
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
-metadata:
-  name: reviews
-  namespace: bookinfo
-spec:
-  parentRefs:
-  - group: ""
-    kind: Service
-    name: reviews
-    port: 9080
-  rules:
-  - backendRefs:
-    - name: reviews-v3
-      port: 9080
-EOF
-
-kubectl apply -n bookinfo -f route-reviews-v3.yaml
-kubectl get httproute -n bookinfo reviews -o yaml | head -n 50
+cat ~/istio/samples/bookinfo/networking/virtual-service-reviews-v3.yaml
+kubectl -n bookinfo apply -f ~/istio/samples/bookinfo/networking/virtual-service-reviews-v3.yaml
 ```
-
-<img width="749" height="434" alt="image" src="https://github.com/user-attachments/assets/037de8c8-a50d-40fa-bd58-41a6719e3f25" />
 
 
 ```bash
@@ -91,7 +71,7 @@ done
 ### 6. Aufräumen 
 
 ```
-kubectl delete -n bookinfo httproute reviews --ignore-not-found
+kubectl delete -n bookinfo vs reviews
 ```
 
 ## Reference:
