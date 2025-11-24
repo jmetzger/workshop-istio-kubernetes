@@ -55,7 +55,7 @@ spec:
 ```
 
 ```
-kubectl apply -f reviews-v1.yaml 
+kubectl -n bookinfo apply -f reviews-v1.yaml 
 kubectl -n bookinfo get virtualservice reviews -n bookinfo
 ```
 
