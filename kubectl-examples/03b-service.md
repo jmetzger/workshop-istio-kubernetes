@@ -67,6 +67,11 @@ kubectl apply -f .
 kubectl get all 
 ```
 
+```
+# Hat er Endpunkte gefunden ?
+kubectl describe svc my-nginx
+```
+
 ## Schritt 2b: NodePort 
 
 ```
