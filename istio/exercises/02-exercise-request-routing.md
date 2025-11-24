@@ -26,7 +26,7 @@ kubectl -n bookinfo get pods -l app=reviews --show-labels
 mkdir -p ~/manifests/requests
 cd ~/manifests/requests
 
-# Die Service-Versionen anlegen
+# Die Destinationen-Versionen anlegen
 cp -a ~/istio/samples/bookinfo/networking/destination-rule-all.yaml destination-rule-all.yaml
 kubectl -n bookinfo apply -f destination-rule-all.yaml 
 ```
