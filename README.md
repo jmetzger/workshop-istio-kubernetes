@@ -6,6 +6,7 @@
    * [Aufbau Kubernetes](/kubernetes/architecture.md)
    * [Pod starten](/kubectl/run-with-example.md)
    * [Namespace/Arbeitsbereich konfigurieren](kubectl/kubectl-einrichten.md#arbeitsbereich-konfigurieren)
+   * [Beispiel-Applikation](bauen-einer-webanwendung.md)
 
 1. Grundlagen ServiceMesh & Istio
    * [Einführung in Istio & Service Mesh-Architekturen](/istio/overview/introduction.md)
