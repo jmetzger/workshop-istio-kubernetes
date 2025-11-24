@@ -33,29 +33,29 @@ kubectl -n bookinfo apply -f .
 
 ---
 
-### 1. HTTPRoute: Alle Requests → `reviews-v1`
+### 1. VirtualService: Alle Requests → `reviews-v1`
 
-```bash
-cat <<EOF > ~/manifests/requests/httproute-reviews-v1.yaml
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
+```
+reviews-v1.yaml 
+```
+
+```
+apiVersion: networking.istio.io/v1
+kind: VirtualService
 metadata:
   name: reviews
-  namespace: bookinfo
 spec:
-  parentRefs:
-  - group: ""
-    kind: Service
-    name: reviews
-    port: 9080
-  rules:
-  - backendRefs:
-    - name: reviews-v1
-      port: 9080
-EOF
+  hosts:
+  - reviews
+  http:
+  - route:
+    - destination:
+        host: reviews
+        subset: v1
+```
 
-kubectl apply -f httproute-reviews-v1.yaml
-kubectl -n bookinfo get httproute reviews -n bookinfo
+kubectl apply -f reviews-v1.yaml 
+kubectl -n bookinfo get virtualservice reviews -n bookinfo
 ```
 
 ```
