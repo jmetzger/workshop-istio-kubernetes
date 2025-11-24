@@ -6,9 +6,9 @@
 mkdir -p ~/manifests/traffic-shifting
 cd ~/manifests/traffic-shifting 
 
-# Die Service-Versionen anlegen
-cp -a ~/istio/samples/bookinfo/platform/kube/bookinfo-versions.yaml bookinfo-versions.yaml
-kubectl -n bookinfo apply -f .
+# Die Destinationen-Versionen anlegen
+cp -a ~/istio/samples/bookinfo/networking/destination-rule-all.yaml destination-rule-all.yaml
+kubectl -n bookinfo apply -f destination-rule-all.yaml 
 ```
 ### 1. 100% Traffic -> reviews.v1 
 
