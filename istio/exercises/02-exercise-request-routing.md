@@ -111,8 +111,7 @@ done
 ## 4. Aufräumen
 
 ```bash
-kubectl -n bookinfo delete -f reviews-v1.yaml 
-kubectl -n bookinfo delete -f virtual-service-reviews-test-v2.yaml 
+kubectl -n bookinfo delete vs reviews 
 ```
 
 ## Reference: 
