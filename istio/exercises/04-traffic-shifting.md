@@ -34,7 +34,7 @@ http://<deine-ip>/productpage
 
 ```
 cat ~/istio/samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml
-kubectl apply -f ~/istio/samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml
+kubectl -n bookinfo apply -f ~/istio/samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml
 ```
 
 ```bash
