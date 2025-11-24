@@ -27,7 +27,7 @@ mkdir -p ~/manifests/requests
 cd ~/manifests/requests
 
 # Die Service-Versionen anlegen
-cp -a ~/istio/samples/bookinfo/platform/kube/bookinfo-versions.yaml bookinfo-versions.yaml
+cp -a ~/istio/samples/bookinfo/networking/destination-rule-all.yaml destination-rule-all.yaml
 kubectl -n bookinfo apply -f .
 ```
 
