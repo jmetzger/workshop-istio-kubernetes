@@ -63,7 +63,8 @@ spec:
 ```
 
 ```
-kubectl apply -f . 
+kubectl apply -f .
+kubectl get all 
 ```
 
 ## Schritt 2b: NodePort 
