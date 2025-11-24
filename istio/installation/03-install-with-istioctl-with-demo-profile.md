@@ -56,44 +56,26 @@ source ~/istioctl.bash
 ### Schritt 2.5. See what it would install 
 
 ```
-# dry-run 
-istioctl install -f ~/istio/samples/bookinfo/demo-profile-no-gateways.yaml -y --dry-run
+# dry-run
+istioctl x precheck 
+istioctl install -f  ~/istio/manifests/profiles/demo.yaml --dry-run
 ```
 
 ### Schritt 3: Installation with demo (by using operator)
 
 ```
-# cat ~/istio/samples/bookinfo/demo-profile-no-gateways.yaml
-# Wird vom ControlPlane ausgewertet
-# Hier wird das ingressgateway abgeschaltet,
-# Weil wir das nicht benötigen, wenn wir
-# die Kubernetes Gateway API verwenden 
 apiVersion: install.istio.io/v1alpha1
 kind: IstioOperator
 spec:
-  profile: demo
   components:
-    ingressGateways:
-    - name: istio-ingressgateway
-      enabled: false
     egressGateways:
     - name: istio-egressgateway
-      enabled: false
+      enabled: true
+  values:
+    profile: demo
 ```
 
 
 ```
-# Der Trend geht Richtung Kubernetees Gateway API
-istioctl install -f ~/istio/samples/bookinfo/demo-profile-no-gateways.yaml -y
+istioctl install -f ~/istio/manifests/profiles/demo.yaml -y
 ```
-
-### Schritt 4: Gateway API's CRD's installieren 
-
-```
-kubectl get crd gateways.gateway.networking.k8s.io &> /dev/null || \
-{ kubectl kustomize "github.com/kubernetes-sigs/gateway-api/config/crd?ref=v1.4.0" | kubectl apply -f -; }
-```
-
-## Reference: Get started 
-
-  * https://istio.io/latest/docs/setup/getting-started/
