@@ -79,3 +79,9 @@ spec:
 ```
 istioctl install -f ~/istio/manifests/profiles/demo.yaml -y
 ```
+
+### Schritt 4: Let us check, if it is running 
+
+```
+kubectl -n istio-system get all
+``` 
