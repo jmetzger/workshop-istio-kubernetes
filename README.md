@@ -2,6 +2,10 @@
 
 ## Agenda
 
+1. Einführung Kubernetes
+   * [Aufbau Kubernetes](/kubernetes/architecture.md)
+
+
 1. Grundlagen ServiceMesh & Istio
    * [Einführung in Istio & Service Mesh-Architekturen](/istio/overview/introduction.md)
    * [Warum ein Service Mesh?](istio/overview/02-warum-servicemesh.md)
