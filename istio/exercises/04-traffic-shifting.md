@@ -18,17 +18,8 @@ kubectl -n bookinfo apply -f ~/istio/samples/bookinfo/networking/virtual-service
 ```
 
 ```
-kubectl apply -n bookinfo -f route-reviews-v1.yaml
 kubectl get vs -n bookinfo reviews -o yaml | head -n 30
 ```
-
-```
-# Status ist interessant !
-```
-
-<img width="748" height="172" alt="image" src="https://github.com/user-attachments/assets/f1c928ea-0819-4a42-8902-e6137c46438c" />
-
-
 
 ### 2. Testen 
 
