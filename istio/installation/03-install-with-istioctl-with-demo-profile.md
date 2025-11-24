@@ -1,4 +1,4 @@
-# Normal installation ("demo") with classicai istiogateway 
+# Normal installation ("demo") with classical istiogateway (legacy)
 
 [Searching for installation with gateway api](istio/installation/gateway-api/03-install-with-istioctl-with-demo-profile.md)
 
