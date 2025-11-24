@@ -12,6 +12,7 @@
 
 1. Services 
    * [Debug Netzwerkverbindung zu Pod/Service](tipps-tricks/verbindung-zu-pod-testen.md)
+   * [DNS Auflösung](/kubernetes-networks/dns-resolution-services.md)
 
 1. Spickzettel kubectl Kubernetes
    * [Spickzettel kubectl](kubectl/spickzettel.md)
