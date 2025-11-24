@@ -33,32 +33,12 @@ http://<deine-ip>/productpage
 ### 3. 50% (v1) /50% (v3) Traffic
 
 ```
-cat <<'EOF' > ~/manifests/traffic-shifting/route-reviews-50-50.yaml
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
-metadata:
-  name: reviews
-  namespace: bookinfo
-spec:
-  parentRefs:
-  - group: ""
-    kind: Service
-    name: reviews
-    port: 9080
-  rules:
-  - backendRefs:
-    - name: reviews-v1
-      port: 9080
-      weight: 50
-    - name: reviews-v3
-      port: 9080
-      weight: 50
-EOF
+cat ~/istio/samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml
+kubectl apply -f ~/istio/samples/bookinfo/networking/virtual-service-reviews-50-v3.yaml
 ```
 
 ```bash
-kubectl apply -n bookinfo -f route-reviews-50-50.yaml
-kubectl get httproute -n bookinfo reviews -o yaml | head -n 40
+kubectl -n bookinfo get vs reviews -o yaml 
 ```
 
 ## 4. Testen 
