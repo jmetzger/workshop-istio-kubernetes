@@ -28,7 +28,7 @@ cd ~/manifests/requests
 
 # Die Service-Versionen anlegen
 cp -a ~/istio/samples/bookinfo/networking/destination-rule-all.yaml destination-rule-all.yaml
-kubectl -n bookinfo apply -f .
+kubectl -n bookinfo apply -f destination-rule-all.yaml 
 ```
 
 ---
