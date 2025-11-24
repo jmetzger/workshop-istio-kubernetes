@@ -34,6 +34,7 @@
 
 1. Sicherheit, Fehlertoleranz & Observability
    * Sicherheit & Zero Trust mit Istio
+   * [Was ist in istio deep-defense (defense in depth) ?](/istio/overview/defense-in-depth.md) 
    * Service-zu-Service-Sicherheit mit mTLS (Mutual TLS)
    * [Übung Zugriffskontrolle mit RBAC & JWT-Authentifizierung](istio/exercises/12-jwt-rbac.md)
    * Istio Authorization Policies (ingress/egress Security)
