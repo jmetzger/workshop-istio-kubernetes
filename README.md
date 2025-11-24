@@ -10,6 +10,9 @@
    * [Übung ReplicaSet(nicht für Produktion)](kubectl-examples/01a-replicaset-nginx.md)
    * [Übung Deployment](kubectl-examples/03-nginx-deployment.md)
 
+1. Spickzettel kubectl Kubernetes
+   * [Spickzettel kubectl](kubectl/spickzettel.md)
+
 1. Grundlagen ServiceMesh & Istio
    * [Einführung in Istio & Service Mesh-Architekturen](/istio/overview/introduction.md)
    * [Warum ein Service Mesh?](istio/overview/02-warum-servicemesh.md)
