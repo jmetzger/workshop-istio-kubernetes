@@ -67,36 +67,16 @@ http://164.90.237.35/productpage
 
 ---
 
-### 2. HTTPRoute anpassen: User `jason` → `reviews-v2`, Rest → `reviews-v1`
+### 2. Adjust VirtualHost: User `jason` → `reviews-v2`, Rest → `reviews-v1`
 
-```bash
-cat <<EOF > ~/manifests/requests/httproute-reviews-jason-v2.yaml
-apiVersion: gateway.networking.k8s.io/v1
-kind: HTTPRoute
-metadata:
-  name: reviews
-  namespace: bookinfo
-spec:
-  parentRefs:
-  - group: ""
-    kind: Service
-    name: reviews
-    port: 9080
-  rules:
-  - matches:
-    - headers:
-      - name: end-user
-        value: jason
-    backendRefs:
-    - name: reviews-v2
-      port: 9080
-  - backendRefs:
-    - name: reviews-v1
-      port: 9080
-EOF
+```
+cp -a ~/istio/samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml virtual-service-reviews-test-v2.yaml
+cat 
+```
 
-kubectl apply -f httproute-reviews-jason-v2.yaml
-kubectl -n bookinfo get httproute reviews -n bookinfo -o yaml
+```
+kubectl -n bookinfo apply -f virtual-service-reviews-test-v2.yaml
+kubectl -n bookinfo get vs reviews -n bookinfo -o yaml
 ```
 
 ---
@@ -131,8 +111,8 @@ done
 ## 4. Aufräumen
 
 ```bash
-kubectl delete -f httproute-reviews-v1.yaml --ignore-not-found
-kubectl delete -f httproute-reviews-jason-v2.yaml --ignore-not-found
+kubectl -n bookinfo delete -f reviews-v1.yaml 
+kubectl -n bookinfo delete -f virtual-service-reviews-test-v2.yaml 
 ```
 
 ## Reference: 
