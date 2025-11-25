@@ -105,7 +105,7 @@
   
 1. Helm
    * [Artifacthub.io](https://artifacthub.io/)
-   * [Eigenes helm-chart erstellen](helm/exercises/04a-create-chart-my-app-gruppenarbeit.md]
+   * [Eigenes helm-chart erstellen](helm/exercises/04a-create-chart-my-app-gruppenarbeit.md)
 
 ## Backlog 
 
