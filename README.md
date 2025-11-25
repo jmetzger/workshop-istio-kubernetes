@@ -102,7 +102,10 @@
    * Zusammenfassung der wichtigsten Erkenntnisse
    * Diskussion von Best Practices für Enterprise-Anwendungen
    * Fragen & weiterführende Ressourcen
-  
+
+1. Performance
+   * [Performance Benchmark](/istio/overview/performance-comparison-baseline-sidecar-ambient.md)
+
 1. Helm
    * [Artifacthub.io](https://artifacthub.io/)
    * [Eigenes helm-chart erstellen](helm/exercises/04a-create-chart-my-app-gruppenarbeit.md)
