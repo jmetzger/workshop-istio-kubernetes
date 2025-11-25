@@ -102,6 +102,9 @@
    * Zusammenfassung der wichtigsten Erkenntnisse
    * Diskussion von Best Practices für Enterprise-Anwendungen
    * Fragen & weiterführende Ressourcen
+  
+1. Helm
+   * [Artifacthub.io](https://artifacthub.io/)
 
 ## Backlog 
 
