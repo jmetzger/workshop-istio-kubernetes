@@ -27,6 +27,14 @@ kubectl -n bookinfo get all
 kubectl -n bookinfo exec "$(kubectl -n bookinfo get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}')" -c ratings -- curl -sS productpage:9080/productpage | grep -o "<title>.*</title>"
 ```
 
+```
+kubectl -n bookinfo run -it --rm podtest  --image=busybox -- sh 
+
+# In der Shell 
+wget -O -  productpage:9080/productpage
+wget -O -  productpage:9080/productpage | grep -o "<title>.*</title>"
+```
+
 ## App mit gateway (istio-ingress-gateway) nach aussen öffnen  
 
 ```
