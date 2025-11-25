@@ -67,8 +67,10 @@ kubectl exec -it deployment/mariadb-deployment -- bash
 ```
 
 ```
+# in der bash 
 env | grep -i MARIADB
 env | grep -i VERSION
+exit 
 ```
 
 ## Important Sidenode 
