@@ -71,7 +71,7 @@ http://164.90.237.35/productpage
 
 ```
 cp -a ~/istio/samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml virtual-service-reviews-test-v2.yaml
-cat ~/istio/samples/bookinfo/networking/virtual-service-reviews-test-v2.yaml virtual-service-reviews-test-v2.yaml
+cat virtual-service-reviews-test-v2.yaml
 ```
 
 ```
