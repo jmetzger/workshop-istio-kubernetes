@@ -54,6 +54,7 @@ EOF
 ## 3. Sidecar injizieren und anwenden
 
 ```bash
+istioctl kube-inject -f ~/manifests/nginx/nginx.yaml
 kubectl apply -f <(istioctl kube-inject -f ~/manifests/nginx/nginx.yaml)
 ```
 
