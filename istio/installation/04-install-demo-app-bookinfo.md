@@ -103,7 +103,7 @@ kubectl -n bookinfo get virtualservice  -o yaml
 ```
 
 ```
-kubectl -n istio-system get svc | grep -i external 
+kubectl -n istio-system get svc | grep istio-ingress
 http://<external-ip>/productpage 
 # or in your browser
 ```
