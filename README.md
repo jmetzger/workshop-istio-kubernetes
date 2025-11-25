@@ -16,6 +16,9 @@
 
 1. StatefulSet
    * [StatefulSet](kubectl-examples/10-statefulset.md)
+  
+1. ConfigMaps
+   * [Exercise configmap](/kubectl-examples/06a-configmap-mariadb.md)
 
 1. Spickzettel kubectl Kubernetes
    * [Spickzettel kubectl](kubectl/spickzettel.md)
