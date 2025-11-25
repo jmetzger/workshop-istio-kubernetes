@@ -98,7 +98,7 @@ kubectl -n bookinfo apply -f .
 ```
 
 ```
-kubectl -n bookinfo get gateway
+kubectl -n bookinfo get gateways.networking.istio.io
 kubectl -n bookinfo get virtualservice  -o yaml 
 ```
 
