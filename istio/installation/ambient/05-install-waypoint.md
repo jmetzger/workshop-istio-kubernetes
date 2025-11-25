@@ -1,5 +1,14 @@
 # Install waypoint
 
+## Walkthrough 
+
+```
+# Deploy it
+istioctl waypoint apply -n bookinfo --enroll-namespace 
+```
+
+```
+```
 
 ## Reference 
 
