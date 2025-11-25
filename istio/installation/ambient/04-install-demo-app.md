@@ -51,4 +51,6 @@ http://<external-ip>/productpage
 # or in your browser
 ```
 
+## Ref: 
 
+  * https://istio.io/latest/docs/ambient/getting-started/deploy-sample-app/
