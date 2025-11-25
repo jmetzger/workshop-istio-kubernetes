@@ -62,6 +62,8 @@ spec:
 
 ```
 kubectl apply -f .
+# findet ersten Pod im Deployment und wechselt dort rein 
+kubectl exec -it deployment/mariadb-deployment -- bash
 ```
 
 ## Important Sidenode 
