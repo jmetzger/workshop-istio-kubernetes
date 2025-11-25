@@ -66,6 +66,11 @@ kubectl apply -f .
 kubectl exec -it deployment/mariadb-deployment -- bash
 ```
 
+```
+env | grep -i MARIADB
+env | grep -i VERSION
+```
+
 ## Important Sidenode 
 
   * If configmap changes, deployment does not know
