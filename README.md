@@ -29,6 +29,7 @@
    * [Herausforderung & Vorteile](istio/overview/03-herausforderungen-vorteile.md)
    * [Architektur & Komponenten von Istio](istio/overview/04-architektur-komponenten.md)
    * [Istio Ingress Gateway vs. Kubernetes Gateway API](istio/overview/06-ingress-istio-gateway-vs-kubernetes-gateway-api.md)
+   * [Ingress vs. Istio (sidecar)](istio/00-istio-vs-ingress.md)
    * [Vergleich mit Linkerd, Cilium, Consul](istio/overview/05-vergleich-linkerd-cilium-consul.md)
 
 1. Setup Cluster
