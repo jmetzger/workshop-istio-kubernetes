@@ -53,12 +53,15 @@
    * [Install waypoint](istio/installation/ambient/05-install-waypoint.md)
 
 
-1. Steuerung des Netzwerkverhaltens in Istio (ohne Gateway API mit klassisch Istio API) 
+1. Steuerung des Netzwerkverhaltens in Istio (ohne Gateway API mit klassisch Istio API / sidecar) 
    * Virtual Services, Destination Rules & Gateway-API
    * [Übung: Header-basiertes Routing](istio/exercises/02-exercise-request-routing.md)
    * [Übung: Traffic-Shifting / Load-Balancing](istio/exercises/04-traffic-shifting.md)
    * Load Balancing & Pfadbasiertes Routing
    * Erstellen von Routing- & Load-Balancing-Regeln
+
+1. Steuerung des Netzwerkverhaltens in Istio (mit Gateway API und ambient mode)
+   * [Übung: Header-basiertes Routing](istio/exercises/ambient/02-exercise-request-routing.md)
 
 1. AuthorizationPolicy
    * [Deny für alles & erlaubt regeln](istio/exercises/12-deny-all-plus-rules.md)
