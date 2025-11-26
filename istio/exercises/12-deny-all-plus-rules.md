@@ -29,6 +29,8 @@ kubectl apply -f 01-restrict-access.yaml
 ### Test in browser url 
 
 ```
+# ip external-ip aus
+# kubectl -n istio-system get svc | grep ingress
 http://<ip>/productpage
 ```
 
