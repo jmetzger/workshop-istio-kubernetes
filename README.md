@@ -50,7 +50,7 @@
 1. Installation (ambient)
    * [istio ambient installieren](istio/installation/ambient/03-install-with-istioctl-with-demo-profile.md)
    * [Install demoapp inkl verwendung von ambient](/istio/installation/ambient/04-install-demo-app.md)
-   * [Install waypoint](istio/installation/ambien/05-install-waypoint.md)
+   * [Install waypoint](istio/installation/ambient/05-install-waypoint.md)
 
 
 1. Steuerung des Netzwerkverhaltens in Istio
