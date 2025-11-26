@@ -203,3 +203,26 @@ kubectl -n bookinfo get pods | grep productpage
 kubectl -n bookinfo debug productpage-v1-54bb874995-rr7cv -it --image=busybox
 ```
 
+```
+# in der bash 
+wget -O - http://reviews:9080/reviews/1
+exit
+```
+
+```
+# AuthorizationPolicy rausnehmen
+kubectl delete -f 03-reviews-from-productpage.yaml
+```
+
+```
+kubectl -n bookinfo debug productpage-v1-54bb874995-rr7cv -it --image=busybox
+```
+
+```
+# in der bash 
+wget -O - http://reviews:9080/reviews/1
+```
+
+```
+exit
+```
