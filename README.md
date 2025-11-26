@@ -47,6 +47,11 @@
    * [Istio Proxy-Konzepte]
    * [Deinstallation von Istio](istio/installation/05-uninstall.md)
 
+1. Installation (ambient)
+   * [istio ambient installieren](istio/installation/ambient/03-install-with-istioctl-with-demo-profile.md)
+   * [Install demoapp inkl verwendung von ambient](/istio/installation/ambient/04-install-demo-app.md)
+
+
 1. Steuerung des Netzwerkverhaltens in Istio
    * Virtual Services, Destination Rules & Gateway-API
    * [Übung: Header-basiertes Routing](istio/exercises/02-exercise-request-routing.md)
