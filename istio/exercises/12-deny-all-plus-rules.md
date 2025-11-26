@@ -212,7 +212,12 @@ exit
 ```
 # AuthorizationPolicy rausnehmen
 kubectl delete -f 03-reviews-from-productpage.yaml
+
 ```
+
+>[NOTE:]
+> Achtung ! Danach 1-2 Minuten warten !!! 
+
 
 ```
 kubectl -n bookinfo debug productpage-v1-54bb874995-rr7cv -it --image=busybox
