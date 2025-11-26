@@ -2,6 +2,9 @@
 
 ## Agenda
 
+1. Aufzeichnungen aus yopad
+   * [Aufzeichnungen](aufzeichnungen-yopad.md)
+
 1. Einführung Kubernetes
    * [Aufbau Kubernetes](/kubernetes/architecture.md)
    * [Pod starten](/kubectl/run-with-example.md)
