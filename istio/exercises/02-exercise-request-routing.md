@@ -39,7 +39,7 @@ kubectl -n bookinfo apply -f destination-rule-all.yaml
 nano reviews-v1.yaml 
 ```
 
-```
+```bash
 apiVersion: networking.istio.io/v1
 kind: VirtualService
 metadata:
