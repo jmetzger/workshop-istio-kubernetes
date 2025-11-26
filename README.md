@@ -56,6 +56,9 @@
 
 1. AuthorizationPolicy
    * [Deny für alles & erlaubt regeln](istio/exercises/12-deny-all-plus-rules.md)
+  
+1. Debug in Istio
+   * [Debug in istio](istio/debug/01-debug-pod.md)
 
 1. Sicherheit, Fehlertoleranz & Observability
    * [Sicherheit & Zero Trust mit Istio](/istio/overview/zero-trust.md)
