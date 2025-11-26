@@ -26,8 +26,10 @@ kubectl -n bookinfo get pods -l app=reviews --show-labels
 mkdir -p ~/manifests/requests
 cd ~/manifests/requests
 
+# aus der alten übung mit istio sidecar (classic)
+rm -fR * 
 # Die Service-Versionen anlegen
-cp -a ~/istio/samples/bookinfo/platform/kube/bookinfo-versions.yaml bookinfo-versions.yaml
+kubectl apply -f ~/istio/samples/bookinfo/platform/kube/bookinfo-versions.yaml bookinfo-versions.yaml
 kubectl -n bookinfo apply -f .
 ```
 
