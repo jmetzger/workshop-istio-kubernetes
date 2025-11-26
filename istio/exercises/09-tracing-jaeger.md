@@ -43,7 +43,7 @@ kubectl apply -f .
 
 ```
 # Adjust to your own IP 
-GATEWAY_URL=164.90.237.35
+GATEWAY_URL=164.90.221.198
 for i in $(seq 1 100); do curl -s -o /dev/null "http://$GATEWAY_URL/productpage";
 ```
 
