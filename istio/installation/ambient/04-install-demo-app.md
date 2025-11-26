@@ -17,7 +17,7 @@ kubectl label namespace bookinfo istio.io/dataplane-mode=ambient
 
 ```
 kubectl -n bookinfo apply -f  ~/istio/samples/bookinfo/platform/kube/bookinfo.yaml
-kubectl -n bookinfo apply -f samples/bookinfo/platform/kube/bookinfo-versions.yaml
+kubectl -n bookinfo apply -f ~/istio/samples/bookinfo/platform/kube/bookinfo-versions.yaml
 
 kubectl -n bookinfo get all 
 ```
