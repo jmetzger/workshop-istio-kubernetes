@@ -14,6 +14,7 @@
 kubectl get pods -n bookinfo -l app=productpage
 kubectl exec -it -n bookinfo <POD-aus-vorheriger-Ausgabe> -c istio-proxy -- curl -X POST "localhost:15000/logging?rbac=debug"
 kubectl logs <POd-aus-vorheriger-Ausgabe> -n bookinfo -c istio-proxy -f
+kubectl logs <POd-aus-vorheriger-Ausgabe> -n bookinfo -c istio-proxy -f | grep 403
 ```
 
 ## Schritt 2: Browseraufruf 
