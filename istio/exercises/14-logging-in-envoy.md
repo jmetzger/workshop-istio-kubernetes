@@ -4,9 +4,9 @@
 
 ```
 # Welche Pod muss ich abfragen 
- POD=$(kubectl get pod -n bookinfo -l app=productpage -o jsonpath='{.items[0].metadata.name}')
- kubectl exec -it -n bookinfo "$POD" -c istio-proxy -- curl -X POST "localhost:15000/logging?rbac=debug"
- kubectl logs "$POD" -n bookinfo -c istio-proxy -f
+ POD=$(kubectl -n bookinfo get pod  -l app=productpage -o jsonpath='{.items[0].metadata.name}')
+ kubectl -n bookinfo exec -it "$POD" -c istio-proxy -- curl -X POST "localhost:15000/logging?rbac=debug"
+ kubectl -n bookinfo logs "$POD"  -c istio-proxy -f
 ```
 
 ```
