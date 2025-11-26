@@ -10,13 +10,29 @@
 
  
   * You need so set up a telemetry - object
+  * kubectl -n istio-system get cm values # What is actually configured 
+    
 
 ## Prep:
 
 ```
 # Activate tracing in istio 
-
-
+cat <<EOF > ./tracing.yaml
+apiVersion: install.istio.io/v1alpha1
+kind: IstioOperator
+spec:
+  profile: ambient
+  meshConfig:
+    enableTracing: true
+    defaultConfig:
+      tracing: {} # disable legacy MeshConfig tracing options
+    extensionProviders:
+    - name: jaeger
+      opentelemetry:
+        port: 4317
+        service: jaeger-collector.istio-system.svc.cluster.local
+EOF
+istioctl install -f ./tracing.yaml --skip-confirmation
 ```
 
 ## Walktrough 
