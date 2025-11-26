@@ -28,6 +28,11 @@ kubectl -n bookinfo get all
 kubectl -n bookinfo exec "$(kubectl -n bookinfo get pod -l app=ratings -o jsonpath='{.items[0].metadata.name}')" -c ratings -- curl -sS productpage:9080/productpage | grep -o "<title>.*</title>"
 ```
 
+```
+# Einfachere Variante 
+kubectl -n bookinfo exec deployments/ratings-v1 -c ratings -- curl -sS productpage:9080/productpage | grep -o "<title>.*</title>"
+```
+
 ## App mit gateway api nach aussen öffnen 
 
 ```
