@@ -10,7 +10,8 @@
 
  
   * You need so set up a telemetry - object
-  * kubectl -n istio-system get cm values # What is actually configured 
+  * kubectl -n istio-system get cm values # What is actually configured
+  * traceSampling steht auf 1, bedeutet von 100 anfragen, wird nur 1 getraced 
     
 
 ## Prep:
