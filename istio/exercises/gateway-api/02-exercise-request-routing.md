@@ -30,7 +30,6 @@ cd ~/manifests/requests
 rm -fR * 
 # Die Service-Versionen anlegen
 kubectl apply -f ~/istio/samples/bookinfo/platform/kube/bookinfo-versions.yaml bookinfo-versions.yaml
-kubectl -n bookinfo apply -f .
 ```
 
 ---
