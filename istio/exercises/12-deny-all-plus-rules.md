@@ -193,3 +193,11 @@ im browser: http://<ip>/productpage
 curl http://<ip>/productpage 
 ```
 
+## Step 6: Debug-Container zum Debuggen 
+
+  * Debug Container in productpage - pod starten, um Verbindung zu pod -> Review zu debuggen 
+
+```
+kubectl -n bookinfo debug kubectl debug deployment/productpage-v1 -it --image=busybox
+```
+
