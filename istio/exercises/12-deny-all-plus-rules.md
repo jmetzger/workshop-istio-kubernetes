@@ -228,3 +228,9 @@ wget -O - http://reviews:9080/reviews/1
 ```
 exit
 ```
+
+## Step 6(V2 - Variante) 
+
+```
+kubectl -n bookinfo run -it podtester --image=busybox --overrides='{ "spec": { "serviceAccount": "bookinfo-productpage" }  }'
+```
