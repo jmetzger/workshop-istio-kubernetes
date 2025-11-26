@@ -8,6 +8,7 @@ istioctl waypoint apply -n bookinfo --enroll-namespace
 ```
 
 ```
+kubectl -n bookinfo get pods | grep way 
 ```
 
 ## Reference 
