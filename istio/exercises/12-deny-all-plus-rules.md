@@ -198,6 +198,6 @@ curl http://<ip>/productpage
   * Debug Container in productpage - pod starten, um Verbindung zu pod -> Review zu debuggen 
 
 ```
-kubectl -n bookinfo debug kubectl debug deployment/productpage-v1 -it --image=busybox
+kubectl -n bookinfo debug deployment/productpage-v1 -it --image=busybox
 ```
 
