@@ -65,8 +65,8 @@ metadata:
 spec:
   ingressClassName: "nginx"
   rules:
-    - host: prometheus.tln10.do.t3isp.de
-      # ⬆️ Each trainee replaces "XX" with their number, e.g. kiali.tln10.do.t3isp.de
+    - host: prometheus.tln<tln-nr>.do.t3isp.de
+      # ⬆️ Each trainee replaces "<tln-nr>" with their number, e.g. prometheus.tln10.do.t3isp.de
       http:
         paths:
           - path: /
