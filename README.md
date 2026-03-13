@@ -124,19 +124,11 @@
   1. Performance
      * [Performance Benchmark](/istio/overview/performance-comparison-baseline-sidecar-ambient.md)
 
+
+## Backlog 
+
   1. Helm
      * [Artifacthub.io](https://artifacthub.io/)
      * [Eigenes helm-chart erstellen](helm/exercises/04a-create-chart-my-app-gruppenarbeit.md)
 
-## Backlog 
 
-  1. Installation & Bereitstellung von Istio (Gateway API)
-     * [Systemanforderungen & Kubernetes-Cluster-Vorbereitung](istio/requirements/overview.md)
-     * [Installations-Config-Profile](istio/installation/02-installation-config-profiles.md)
-     * [Istio-Installation mit istioctl und der IstioOperator - Resource](istio/installation/gateway-api/03-install-with-istioctl-with-demo-profile.md)
-     * [Wie ändere ich die Config/Installation von istio - Beispiel egressGateway](istio/installation/04-change-installation-with-istioctl-and-istioOperator.md)
-     * [Istio Sidecar-Injection](istio/exercises/01-exercise-injection.md)
-     * [Istio demo-app *bookinfo* installieren](istio/installation/04-install-demo-app-bookinfo.md)
-     * Istio-Installation mit Helm
-     * [Istio Proxy-Konzepte]
-     * [Deinstallation von Istio](istio/installation/05-uninstall.md)
