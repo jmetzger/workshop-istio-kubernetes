@@ -94,18 +94,6 @@ echo "$GATEWAY_URL"
 #    → Reviews mit Sternen (v2)
 ```
 
-(Optional: Kurztest per curl, ohne Login-UI):
-
-```bash
-for i in {1..3}; do
-  curl -s "$GATEWAY_URL/productpage" | grep -o "rating" || true
-done
-
-for i in {1..3}; do
-  curl -s -H "end-user: jason" "$GATEWAY_URL/productpage" | grep -o "rating" || true
-done
-```
-
 ---
 
 ## 4. Aufräumen
